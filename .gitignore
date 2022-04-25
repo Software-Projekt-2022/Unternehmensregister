@@ -1,6 +1,7 @@
 ### CUSTOM
 .idea/discord.xml
 .idea/sshConfigs.xml
+.idea/dataSources.xml
 api/src/main/resources/application.properties
 
 # Project exclude paths
