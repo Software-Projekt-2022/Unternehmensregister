@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -14,16 +15,20 @@ import java.util.List;
  * @author Dubsky
  */
 @Controller
-@RequestMapping("user")
+@RequestMapping("/api/user")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserController {
 
     private final UserService userService;
 
-    @GetMapping(path = "getUsers", produces = "application/json")
+    @GetMapping(path = "/getUsers", produces = "application/json")
     public List<User> getUsers() {
-        System.out.println("REQUEST");
         return userService.getUsers();
+    }
+
+    @GetMapping(path = "/getUser", produces = "application/json")
+    public User getUser(@RequestParam long id) {
+        return userService.getUser(id);
     }
 
 }
