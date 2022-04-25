@@ -1,5 +1,6 @@
 ### PLUGINS
 .idea/discord.xml
+.idea/sshConfigs.xml
 
 # Project exclude paths
 /.gradle/
