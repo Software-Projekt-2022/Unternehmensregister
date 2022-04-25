@@ -1,6 +1,7 @@
-### PLUGINS
+### CUSTOM
 .idea/discord.xml
 .idea/sshConfigs.xml
+api/src/main/resources/application.properties
 
 # Project exclude paths
 /.gradle/
