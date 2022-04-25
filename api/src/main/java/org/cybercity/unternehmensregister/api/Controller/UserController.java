@@ -26,9 +26,39 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @GetMapping(path = "/getUser", produces = "application/json")
+    @GetMapping(path = "/getUserByID", produces = "application/json")
     public User getUser(@RequestParam long id) {
         return userService.getUser(id);
+    }
+
+    @GetMapping(path = "/setForename", produces = "application/json")
+    public void setForename(@RequestParam long id, @RequestParam String newName) {
+        userService.setForename(id, newName);
+    }
+
+    @GetMapping(path = "/setSurname", produces = "application/json")
+    public void setSurname(@RequestParam long id, @RequestParam String newName) {
+        userService.setSurname(id, newName);
+    }
+
+    @GetMapping(path = "/setAge", produces = "application/json")
+    public void setAge(@RequestParam long id, @RequestParam int newAge) {
+        userService.setAge(id, newAge);
+    }
+
+    @GetMapping(path = "/setEmail", produces = "application/json")
+    public void setEmail(@RequestParam long id, @RequestParam String newEmail) {
+        userService.setEmail(id, newEmail);
+    }
+
+    @GetMapping(path = "/setCompany", produces = "application/json")
+    public void setCompany(@RequestParam long id, @RequestParam int newCompany) {
+        userService.setCompany(id, newCompany);
+    }
+
+    @GetMapping(path = "/setStatus", produces = "application/json")
+    public void setStatus(@RequestParam long id, @RequestParam String newStatus) {
+        userService.setStatus(id, newStatus);
     }
 
 }
