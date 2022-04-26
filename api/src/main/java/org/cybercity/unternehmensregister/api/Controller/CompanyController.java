@@ -54,7 +54,7 @@ public class CompanyController {
     }
 
     @PostMapping(path = "setCeoId", produces = "application/json")
-    public void setCeoId(@RequestParam long id, @RequestParam long newCeoId) {
+    public void setCeoId(@RequestParam long id, @RequestParam int newCeoId) {
         companyService.setCeoId(id, newCeoId);
     }
 
