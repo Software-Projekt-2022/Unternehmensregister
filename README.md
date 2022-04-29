@@ -2,7 +2,7 @@
 [Author](https://github.com/DubskySteam) <> [Docker HUB](https://hub.docker.com/r/dubskysteam/cyberjobs)
 
 ### Frontend
-![](https://img.shields.io/badge/Website-1.1-green?style=for-the-badge&logo=bootstrap)
+![](https://img.shields.io/badge/Website-1.2-green?style=for-the-badge&logo=next.js)
 ![](https://img.shields.io/badge/Desktop-Unclear-red?style=for-the-badge&logo=compose)
 
 ### Backend
