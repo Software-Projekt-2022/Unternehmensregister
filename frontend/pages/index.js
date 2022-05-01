@@ -40,8 +40,7 @@ export default function Home() {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>
                         </ul>
-                        <button className="btn btn-primary" type="button" onClick={() => router.push('/login')}>Log in
-                        </button>
+                        <button className="btn btn-primary" type="button" onClick={() => router.push('/login')}>Log in</button>
                     </div>
                 </div>
             </nav>
@@ -70,7 +69,7 @@ export default function Home() {
                                     in your region.</p>
                                 <button className="btn btn-primary fs-5 me-2 py-2 px-4" type="button">Job offers
                                 </button>
-                                <button className="btn btn-outline-primary fs-5 py-2 px-4" type="button">New account
+                                <button className="btn btn-outline-primary fs-5 py-2 px-4" type="button" onClick={() => router.push('/register')}>New account
                                 </button>
                             </div>
                         </div>
