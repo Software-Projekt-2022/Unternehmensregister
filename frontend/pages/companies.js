@@ -4,7 +4,7 @@ import $ from 'jquery';
 const showWarning = () => {
     let root = document.getElementById('api_check');
     root.insertAdjacentHTML('beforebegin', `
-    <div class="alert alert-danger">
+    <div className="alert alert-danger">
     <strong>Connection error!</strong> Could not connect to the API
     </div>
         `);
@@ -51,7 +51,7 @@ const Companies = props => {
                 </div>
                 <div className="offcanvas-body">
                     <h5>GitHub</h5>
-                    <div class="btn-group">
+                    <div className="btn-group">
                         <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank">Organization</a></button><br />
                         <button className="btn btn-warning" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">Repository</a></button><br />
                     </div>
