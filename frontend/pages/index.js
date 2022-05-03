@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import {useRouter} from 'next/router';
+import Companies from './companies';
 
 export default function Home() {
     const router = useRouter();
@@ -13,8 +14,20 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
+            <div className="offcanvas offcanvas-start" id="sidebar">
+                <div className="offcanvas-header">
+                    <h1 className="offcanvas-title" href="https://github.com/DubskySteam">Project</h1>
+                    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div className="offcanvas-body">
+                    <h5>GitHub</h5>
+                    <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/">GitHub - Organization</a></button><br />
+                    <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">GitHub - Repository</a></button><br />
+                </div>
+            </div>
+
             <nav className="navbar navbar-light navbar-expand-md py-3">
-                <div className="container"><a className="navbar-brand d-flex align-items-center" href="#"><span
+                <div className="container"><a className="navbar-brand d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#sidebar"><span
                     className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg
                     xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
                     className="bi bi-bezier">
