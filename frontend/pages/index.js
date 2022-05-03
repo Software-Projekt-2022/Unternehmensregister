@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import {useRouter} from 'next/router';
-import Companies from './companies';
 
 export default function Home() {
     const router = useRouter();
@@ -21,7 +20,7 @@ export default function Home() {
                 </div>
                 <div className="offcanvas-body">
                     <h5>GitHub</h5>
-                    <div class="btn-group">
+                    <div className="btn-group">
                         <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank">Organization</a></button><br />
                         <button className="btn btn-warning" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">Repository</a></button><br />
                     </div>
