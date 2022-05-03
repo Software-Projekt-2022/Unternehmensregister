@@ -1,14 +1,27 @@
 import { useRouter } from 'next/router';
 import $ from 'jquery';
 
+const showWarning = () => {
+    let root = document.getElementById('api_check');
+    root.insertAdjacentHTML('beforebegin', `
+    <div class="alert alert-danger">
+    <strong>Connection error!</strong> Could not connect to the API
+    </div>
+        `);
+}
+
 const getData = async () => {
         const response = await $.ajax({
             url: 'http://localhost:8080/api/company/getAll',
             method: 'GET',
-            dataType: 'json'
+            dataType: 'json',
+            success: function (data) {
+                renderTable(data);
+            },
+            error: function (data) {
+                showWarning();
+            }
         });
-        renderTable(response);
-
 };
 
 const renderTable = (data) => {
@@ -38,8 +51,10 @@ const Companies = props => {
                 </div>
                 <div className="offcanvas-body">
                     <h5>GitHub</h5>
-                    <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/">GitHub - Organization</a></button><br />
-                    <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">GitHub - Repository</a></button><br />
+                    <div class="btn-group">
+                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank">Organization</a></button><br />
+                        <button className="btn btn-warning" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">Repository</a></button><br />
+                    </div>
                 </div>
             </div>
             <nav className="navbar navbar-light navbar-expand-md py-3">
@@ -75,6 +90,11 @@ const Companies = props => {
 
             <section className="position-relative py-4 py-xl-5">
                 <div className="container">
+
+                    <div id="api_check">
+                        
+                    </div>
+
                     <div className="table-responsive">
                         <table className="table table-hover">
                             <thead className='table-dark'>
