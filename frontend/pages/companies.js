@@ -118,5 +118,10 @@ const Companies = props => {
 
     )
 }
-  
-  export default Companies;
+
+if (typeof window !== "undefined") {
+    console.log("OK");
+    getData();
+}
+
+export default Companies;
