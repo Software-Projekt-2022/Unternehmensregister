@@ -3,6 +3,7 @@
 .idea/sshConfigs.xml
 .idea/dataSources.xml
 .idea/deployment.xml
+.idea/jpa-buddy.xml
 api/src/main/resources/application.properties
 
 # Project exclude paths
