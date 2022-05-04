@@ -13,8 +13,22 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
+            <div className="offcanvas offcanvas-start" id="sidebar">
+                <div className="offcanvas-header">
+                    <h1 className="offcanvas-title" href="https://github.com/DubskySteam">Project</h1>
+                    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div className="offcanvas-body">
+                    <h5>GitHub</h5>
+                    <div className="btn-group">
+                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank">Organization</a></button><br />
+                        <button className="btn btn-warning" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">Repository</a></button><br />
+                    </div>
+                </div>
+            </div>
+
             <nav className="navbar navbar-light navbar-expand-md py-3">
-                <div className="container"><a className="navbar-brand d-flex align-items-center" href="#"><span
+                <div className="container"><a className="navbar-brand d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#sidebar"><span
                     className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg
                     xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
                     className="bi bi-bezier">
@@ -40,8 +54,7 @@ export default function Home() {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>
                         </ul>
-                        <button className="btn btn-primary" type="button" onClick={() => router.push('/login')}>Log in
-                        </button>
+                        <button className="btn btn-primary" type="button" onClick={() => router.push('/login')}>Log in</button>
                     </div>
                 </div>
             </nav>
@@ -70,7 +83,7 @@ export default function Home() {
                                     in your region.</p>
                                 <button className="btn btn-primary fs-5 me-2 py-2 px-4" type="button">Job offers
                                 </button>
-                                <button className="btn btn-outline-primary fs-5 py-2 px-4" type="button">New account
+                                <button className="btn btn-outline-primary fs-5 py-2 px-4" type="button" onClick={() => router.push('/register')}>New account
                                 </button>
                             </div>
                         </div>
@@ -276,6 +289,7 @@ export default function Home() {
                     </div>
                 </div>
             </footer>
+
         </div>
     )
 }

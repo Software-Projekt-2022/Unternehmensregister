@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css'
 import '../styles/Animated-Type-Heading.css'
+import $ from 'jquery';
 import Head from "next/head";
 
 import {useEffect} from "react";

@@ -1,7 +1,20 @@
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
+import styles from "../styles/Home.module.css";
 
-const Login = props => {
-  const router = useRouter();
+const db_register = () => {
+    $.ajax({
+        type: "GET",
+        url: "127.0.0.1:8080/api/user/getUsers",
+        data: data,
+        success: function(data) {
+            console.log(data);
+        },
+        dataType: JSON
+    });
+}
+
+const Register = props => {
+    const router = useRouter();
     return (
         <div className="container-sm">
 
@@ -55,7 +68,8 @@ const Login = props => {
                 <div className="container">
                     <div className="row mb-5">
                         <div className="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2>Log in</h2>
+                            <h2>Register your account</h2>
+                            <p className="w-lg-50">By registering an account, you automatically accept our Terms of Service.</p>
                         </div>
                     </div>
                     <div className="row d-flex justify-content-center">
@@ -75,7 +89,8 @@ const Login = props => {
                                         <div className="mb-3"><input className="form-control" type="password"
                                                                      name="password" placeholder="Password" id="inp_pw"/></div>
                                         <div className="mb-3">
-                                            <button className="btn btn-primary d-block w-100" type="submit">Log in</button>
+                                            <button className="btn btn-primary d-block w-100" type="submit" onClick={db_register}>Register
+                                            </button>
                                         </div>
                                         <p className="text-muted">Forgot your password?</p>
                                     </form>
@@ -88,6 +103,6 @@ const Login = props => {
 
         </div>
     )
-  }
-  
-  export default Login;
+}
+
+export default Register;
