@@ -2,5 +2,7 @@
 <project version="4">
   <component name="JpaBuddyIdeaProjectConfig">
     <option name="defaultUnitInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="f35d5cee-5734-462a-aa84-6237cdc38475" />
+    <option name="reLastEntityCreationPackage" value="api/src/main/java/org/cybercity/unternehmensregister/api/Model" />
   </component>
 </project>
