@@ -18,4 +18,9 @@ public class JobService {
         return jobRepository.findAll();
     }
 
+    public Job newJob(Job newJob) {
+        jobRepository.save(newJob);
+        return newJob;
+    }
+
 }

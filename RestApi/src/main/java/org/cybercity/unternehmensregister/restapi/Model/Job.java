@@ -25,7 +25,6 @@ public class Job {
     @Column(name = "wage_upper")
     private Integer wageUpper;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "employer", nullable = false)
-    private Company employer;
+    @Column(name = "employer")
+    private Integer employer;
 }
