@@ -27,8 +27,7 @@ public class JobController {
     @PostMapping(path = "newJob", produces = "application/json")
     @ResponseBody
     public Job newJob(@RequestBody Job job) {
-        jobService.newJob(job);
-        return job;
+        return jobService.newJob(job);
     }
 
 }
