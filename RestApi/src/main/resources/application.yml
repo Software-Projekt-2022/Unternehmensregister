@@ -1,0 +1,19 @@
+# Server settings
+server:
+  port: 8080
+  address: 0.0.0.0
+# Database
+spring.datasource:
+  url:
+  username:
+  password: 
+# JPA
+spring.jpa:
+  hibernate:
+    ddl-auto: none
+  show-sql: false
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+# Swagger
+springdoc.swagger-ui:
+  path: /docs.html
+  operationsSorter: method
