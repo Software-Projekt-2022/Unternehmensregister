@@ -19,6 +19,10 @@ public class CompanyService {
 
     private final CompanyRepository companyRepository;
 
+    public Company newCompany(Company company) {
+        companyRepository.save(company);
+    }
+
     public List<Company> getAll() {
         return companyRepository.findAll();
     }

@@ -19,13 +19,19 @@ public class CompanyController {
 
     private final CompanyService companyService;
 
+    @ResponseBody
+    @PostMapping(path = "newCompany", produces = "application/json";
+    public Company newCompany(@RequestBody Company company) {
+        return companyService.newCompany(company);
+    }
+
     @GetMapping(path = "getAll", produces = "application/json")
     public List<Company> getAll() {
         return companyService.getAll();
     }
 
-    @GetMapping(path = "getByID", produces = "application/json")
-    public Company getByID(@RequestParam int id) {
+    @GetMapping(path = "getByID/{id}", produces = "application/json")
+    public Company getByID(@PathVariable int id) {
         return companyService.getByID(id);
     }
 
