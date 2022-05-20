@@ -20,7 +20,7 @@ public class CompanyController {
     private final CompanyService companyService;
 
     @ResponseBody
-    @PostMapping(path = "newCompany", produces = "application/json");
+    @PostMapping(path = "newCompany", consumes = "application/json", produces = "application/json")
     public Company newCompany(@RequestBody Company company) {
         return companyService.newCompany(company);
     }

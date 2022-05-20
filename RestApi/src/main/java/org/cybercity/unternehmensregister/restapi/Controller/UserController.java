@@ -37,7 +37,6 @@ public class UserController {
         return userService.getUser(id);
     }
 
-    @ResponseBody
     @PostMapping(path = "setForename", produces = "application/json")
     public void setForename(@RequestParam long id, @RequestParam String newName) {
         userService.setForename(id, newName);

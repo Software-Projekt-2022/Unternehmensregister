@@ -19,15 +19,15 @@ public class JobController {
 
     private final JobService jobService;
 
-    @GetMapping(path = "getAll", produces = "application/json")
-    public List<Job> getJobs() {
-        return jobService.getJobs();
-    }
-
     @PostMapping(path = "newJob", produces = "application/json")
     @ResponseBody
     public Job newJob(@RequestBody Job job) {
         return jobService.newJob(job);
+    }
+    
+    @GetMapping(path = "getAll", produces = "application/json")
+    public List<Job> getJobs() {
+        return jobService.getJobs();
     }
 
 }

@@ -21,6 +21,7 @@ public class CompanyService {
 
     public Company newCompany(Company company) {
         companyRepository.save(company);
+        return company;
     }
 
     public List<Company> getAll() {
