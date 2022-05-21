@@ -29,4 +29,10 @@ public class JobService {
         obj.setWageUpper(upperWage);
         jobRepository.save(obj);
     }
+
+    public void setEmployer(long id, long id_employer) {
+        Job obj = jobRepository.getById((int) id);
+        obj.setEmployer((int) id_employer);
+        jobRepository.save(obj);
+    }
 }
