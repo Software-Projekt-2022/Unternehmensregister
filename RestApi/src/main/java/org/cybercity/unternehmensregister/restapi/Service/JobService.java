@@ -45,4 +45,8 @@ public class JobService {
         jobRepository.save(obj);
     }
 
+    public void deleteJob(long id) {
+        Job obj = jobRepository.getById((int) id);
+        jobRepository.delete(obj);
+    }
 }

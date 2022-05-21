@@ -46,4 +46,9 @@ public class JobController {
         jobService.newName(id, newName);
     }
 
+    @DeleteMapping(path = "deleteJob/{id}", produces = "application/json")
+    public void setWage(@PathVariable long id) {
+        jobService.deleteJob(id);
+    }
+
 }
