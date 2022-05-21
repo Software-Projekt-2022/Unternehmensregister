@@ -26,6 +26,7 @@ public class JobController {
     }
     
     @GetMapping(path = "getAll", produces = "application/json")
+    @ResponseBody
     public List<Job> getJobs() {
         return jobService.getJobs();
     }
@@ -38,6 +39,11 @@ public class JobController {
     @PostMapping(path = "setEmployer/{id}", produces = "application/json")
     public void setWage(@PathVariable long id, @RequestParam long id_employer) {
         jobService.setEmployer(id, id_employer);
+    }
+
+    @PostMapping(path = "setName/{id}", produces = "application/json")
+    public void setWage(@PathVariable long id, @RequestParam String newName) {
+        jobService.newName(id, newName);
     }
 
 }

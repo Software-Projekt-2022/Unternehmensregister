@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Clemens
+ */
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class JobService {
@@ -35,4 +38,11 @@ public class JobService {
         obj.setEmployer((int) id_employer);
         jobRepository.save(obj);
     }
+
+    public void newName(long id, String newName) {
+        Job obj = jobRepository.getById((int) id);
+        obj.setName(newName);
+        jobRepository.save(obj);
+    }
+
 }
