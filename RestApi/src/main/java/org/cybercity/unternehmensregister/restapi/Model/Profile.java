@@ -12,15 +12,14 @@ import javax.persistence.*;
 @Table(name = "profile")
 public class Profile {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", nullable = false)
     private Integer id;
 
-    @MapsId
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
     @Column(name = "aboutme", length = 199)
     private String aboutme;
+
+    @Column(name = "certificates")
+    private String certificates;
 
 }
