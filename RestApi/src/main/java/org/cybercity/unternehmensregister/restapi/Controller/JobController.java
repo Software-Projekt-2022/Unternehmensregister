@@ -19,16 +19,22 @@ public class JobController {
 
     private final JobService jobService;
 
-    @PostMapping(path = "newJob", produces = "application/json")
-    @ResponseBody
-    public Job newJob(@RequestBody Job job) {
-        return jobService.newJob(job);
-    }
-    
     @GetMapping(path = "getAll", produces = "application/json")
     @ResponseBody
     public List<Job> getJobs() {
         return jobService.getJobs();
+    }
+
+    @GetMapping(path = "getJobByID/{id}", produces = "application/json")
+    @ResponseBody
+    public Job getJobByID(@PathVariable long id) {
+        return jobService.getJobByID(id);
+    }
+
+    @PostMapping(path = "newJob", produces = "application/json")
+    @ResponseBody
+    public Job newJob(@RequestBody Job job) {
+        return jobService.newJob(job);
     }
 
     @PostMapping(path = "setWage/{id}", produces = "application/json")

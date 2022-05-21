@@ -21,6 +21,10 @@ public class JobService {
         return jobRepository.findAll();
     }
 
+    public Job getJobByID(long id) {
+        return jobRepository.getById((int)id);
+    }
+
     public Job newJob(Job newJob) {
         jobRepository.save(newJob);
         return newJob;
@@ -49,4 +53,5 @@ public class JobService {
         Job obj = jobRepository.getById((int) id);
         jobRepository.delete(obj);
     }
+
 }
