@@ -32,3 +32,7 @@ gradle clean build
 ```bash
 java -jar .\build\libs\RestApi-X.X.jar --CJ_HOST=URL --CJ_PORT=PORT --CJ_DB=DBNAME --CJ_USER=DBUSER --CJ_PW=DBPASSWORD
 ```
+### Building the docker image
+```docker
+docker build --build-arg HOST=X --build-arg PORT=X --build-arg DB=X --build-arg USER=X --build-arg PW=X --no-cache
+```
