@@ -34,5 +34,5 @@ java -jar .\build\libs\RestApi-X.X.jar --CJ_HOST=URL --CJ_PORT=PORT --CJ_DB=DBNA
 ```
 ### Building the docker image
 ```docker
-docker build . --build-arg HOST=X --build-arg PORT=X --build-arg DB=X --build-arg USER=X --build-arg PW=X --no-cache
+docker build . --build-arg HOST=X --build-arg PORT=X --build-arg DB=X --build-arg USER=X --build-arg PW=X --no-cache -t cybercity/cyberjobs:latest
 ```
