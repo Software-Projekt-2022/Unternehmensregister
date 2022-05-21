@@ -22,3 +22,12 @@ ___
 
 ![](https://img.shields.io/github/issues-raw/Software-Projekt-2022/Unternehmensregister?style=for-the-badge)
 ![](https://img.shields.io/github/issues-pr-raw/Software-Projekt-2022/Unternehmensregister?style=for-the-badge)
+---
+### Building the API
+```gradle
+gradle clean build
+```
+### Running the API
+```bash
+java -jar .\build\libs\RestApi-X.X.jar --CJ_HOST=URL --CJ_PORT=PORT --CJ_DB=DBNAME --CJ_USER=DBUSER --CJ_PW=DBPASSWORD
+```
