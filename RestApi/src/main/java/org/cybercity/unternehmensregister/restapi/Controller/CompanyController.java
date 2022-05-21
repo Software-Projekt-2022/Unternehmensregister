@@ -35,33 +35,33 @@ public class CompanyController {
         return companyService.getByID(id);
     }
 
-    @GetMapping(path = "getByName", produces = "application/json")
-    public Company getByName(@RequestParam String input) {
+    @GetMapping(path = "getByName/{input}", produces = "application/json")
+    public Company getByName(@PathVariable String input) {
         return companyService.getByName(input);
     }
 
-    @GetMapping(path = "getByAbbreviation", produces = "application/json")
-    public Company getByAbbreviation(@RequestParam String input) {
+    @GetMapping(path = "getByAbbreviation/{input}", produces = "application/json")
+    public Company getByAbbreviation(@PathVariable String input) {
         return companyService.getByAbbreviation(input);
     }
 
-    @GetMapping(path = "getByCeoId", produces = "application/json")
-    public List<Company> getByCeoId(@RequestParam int id) {
+    @GetMapping(path = "getByCeoId/{id}", produces = "application/json")
+    public List<Company> getByCeoId(@PathVariable int id) {
         return companyService.getByCeoId(id);
     }
 
-    @PostMapping(path = "setName", produces = "application/json")
-    public void setName(@RequestParam long id, @RequestParam String newName) {
+    @PostMapping(path = "setName/{id}", produces = "application/json")
+    public void setName(@PathVariable long id, @RequestParam String newName) {
         companyService.setName(id, newName);
     }
 
-    @PostMapping(path = "setAbbreviation", produces = "application/json")
-    public void setAbbreviation(@RequestParam long id, @RequestParam String newAbbreviation) {
+    @PostMapping(path = "setAbbreviation/{id}", produces = "application/json")
+    public void setAbbreviation(@PathVariable long id, @RequestParam String newAbbreviation) {
         companyService.setAbbreviation(id, newAbbreviation);
     }
 
-    @PostMapping(path = "setCeoId", produces = "application/json")
-    public void setCeoId(@RequestParam long id, @RequestParam int newCeoId) {
+    @PostMapping(path = "setCeoId/{id}", produces = "application/json")
+    public void setCeoId(@PathVariable long id, @RequestParam int newCeoId) {
         companyService.setCeoId(id, newCeoId);
     }
 

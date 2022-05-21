@@ -30,4 +30,9 @@ public class JobController {
         return jobService.getJobs();
     }
 
+    @PostMapping(path = "setWage/{id}", produces = "application/json")
+    public void setWage(@PathVariable long id, @RequestParam int lowerWage, @RequestParam int upperWage) {
+
+    }
+
 }

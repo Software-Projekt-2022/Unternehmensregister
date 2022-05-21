@@ -37,38 +37,38 @@ public class UserController {
         return userService.getUser(id);
     }
 
-    @PostMapping(path = "setForename", produces = "application/json")
-    public void setForename(@RequestParam long id, @RequestParam String newName) {
+    @PostMapping(path = "setForename/{id}", produces = "application/json")
+    public void setForename(@PathVariable long id, @RequestParam String newName) {
         userService.setForename(id, newName);
     }
 
     @ResponseBody
-    @PostMapping(path = "setSurname", produces = "application/json")
-    public void setSurname(@RequestParam long id, @RequestParam String newName) {
+    @PostMapping(path = "setSurname/{id}", produces = "application/json")
+    public void setSurname(@PathVariable long id, @RequestParam String newName) {
         userService.setSurname(id, newName);
     }
 
     @ResponseBody
-    @PostMapping(path = "setAge", produces = "application/json")
-    public void setAge(@RequestParam long id, @RequestParam int newAge) {
+    @PostMapping(path = "setAge/{id}", produces = "application/json")
+    public void setAge(@PathVariable long id, @RequestParam int newAge) {
         userService.setAge(id, newAge);
     }
 
     @ResponseBody
-    @PostMapping(path = "setEmail", produces = "application/json")
-    public void setEmail(@RequestParam long id, @RequestParam String newEmail) {
+    @PostMapping(path = "setEmail/{id}", produces = "application/json")
+    public void setEmail(@PathVariable long id, @RequestParam String newEmail) {
         userService.setEmail(id, newEmail);
     }
 
     @ResponseBody
-    @PostMapping(path = "setCompany", produces = "application/json")
-    public void setCompany(@RequestParam long id, @RequestParam int newCompany) {
+    @PostMapping(path = "setCompany/{id}", produces = "application/json")
+    public void setCompany(@PathVariable long id, @RequestParam int newCompany) {
         userService.setCompany(id, newCompany);
     }
 
     @ResponseBody
-    @PostMapping(path = "setStatus", produces = "application/json")
-    public void setStatus(@RequestParam long id, @RequestParam String newStatus) {
+    @PostMapping(path = "setStatus/{id}", produces = "application/json")
+    public void setStatus(@PathVariable long id, @RequestParam String newStatus) {
         userService.setStatus(id, newStatus);
     }
 
