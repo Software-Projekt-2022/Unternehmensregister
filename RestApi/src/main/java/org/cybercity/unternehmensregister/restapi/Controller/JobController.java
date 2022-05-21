@@ -31,28 +31,28 @@ public class JobController {
         return jobService.getJobByID(id);
     }
 
-    @PostMapping(path = "newJob", produces = "application/json")
+    @PostMapping(path = "newJob", consumes = "application/json", produces = "application/json")
     @ResponseBody
     public Job newJob(@RequestBody Job job) {
         return jobService.newJob(job);
     }
 
-    @PostMapping(path = "setWage/{id}", produces = "application/json")
+    @PostMapping(path = "setWage/{id}")
     public void setWage(@PathVariable long id, @RequestParam int lowerWage, @RequestParam int upperWage) {
         jobService.setWage(id, lowerWage, upperWage);
     }
 
-    @PostMapping(path = "setEmployer/{id}", produces = "application/json")
+    @PostMapping(path = "setEmployer/{id}")
     public void setWage(@PathVariable long id, @RequestParam long id_employer) {
         jobService.setEmployer(id, id_employer);
     }
 
-    @PostMapping(path = "setName/{id}", produces = "application/json")
+    @PostMapping(path = "setName/{id}")
     public void setWage(@PathVariable long id, @RequestParam String newName) {
         jobService.newName(id, newName);
     }
 
-    @DeleteMapping(path = "deleteJob/{id}", produces = "application/json")
+    @DeleteMapping(path = "deleteJob/{id}")
     public void setWage(@PathVariable long id) {
         jobService.deleteJob(id);
     }
