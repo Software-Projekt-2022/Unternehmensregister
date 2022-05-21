@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @GetMapping(path = "getUsers", produces = "application/json")
+    @GetMapping(path = "getAll", produces = "application/json")
     public List<User> getUsers() {
         return userService.getUsers();
     }
