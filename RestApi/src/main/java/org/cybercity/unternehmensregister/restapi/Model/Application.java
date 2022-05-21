@@ -3,32 +3,31 @@ package org.cybercity.unternehmensregister.restapi.Model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "application")
+@Table(name = "applications", schema = "public")
 public class Application {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "application_id", nullable = false)
-    private Integer id;
+    @Column(name = "application_id")
+    @NotNull
+    private Long id;
 
-    @MapsId
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "application_id", nullable = false)
-    private User user;
+    @Column(name = "applicant_id")
+    @NotNull
+    private int applicant_id;
 
-    @Column(name = "applicant_id", nullable = false)
-    private Integer applicantId;
+    @Column(name = "job_id")
+    @NotNull
+    private int job_id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "job_id", nullable = false)
-    private Job job;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "company_id", nullable = false)
-    private Company company;
+    @Column(name = "employer_id")
+    @NotNull
+    private int company_id;
 }
