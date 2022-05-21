@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/profile")
 @CrossOrigin(origins = "*")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class ProfileController {
+public class UserProfileController {
 
     private final ProfileService profileService;
 
@@ -47,7 +47,7 @@ public class ProfileController {
         profileService.addCertificate(id, newCert);
     }
 
-    @DeleteMapping(path = "deleteProfile/{id]")
+    @DeleteMapping(path = "deleteProfile/{id}")
     public void deleteProfile(@PathVariable int id) {
         profileService.deleteProfile(id);
     }
