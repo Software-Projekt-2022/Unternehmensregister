@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -25,10 +24,9 @@ public class JobService {
     }
 
     public void setWage(long id, int lowerWage, int upperWage) {
-        Optional<Job> tmp = jobRepository.findById((int)id);
-        if (tmp.isPresent()) {
-            tmp.get().setWageLower(lowerWage);
-            tmp.get().setWageUpper(upperWage);
-        }
+        Job obj = jobRepository.getById((int) id);
+        obj.setWageLower(lowerWage);
+        obj.setWageUpper(upperWage);
+        jobRepository.save(obj);
     }
 }
