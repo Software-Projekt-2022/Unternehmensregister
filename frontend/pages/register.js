@@ -2,12 +2,15 @@ import {useRouter} from 'next/router';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import $ from 'jquery';
-import {registerCallEcho, registerCall} from './api/api_register.js'
+import {registerCall} from './api/api_register.js'
 
-const test = () => {
-    var user = document.getElementById('inp_email').value
-    var pw = document.getElementById('inp_pw').value
-    console.log(registerCallEcho(user, pw))
+const doRegister = () => {
+    var email = document.getElementById('inp_email').value
+    var forename = document.getElementById('inp_forename').value
+    var surname = document.getElementById('inp_surname').value
+    var age = document.getElementById('inp_age').value
+    var membership = document.getElementById('inp_membership').value
+    console.log(registerCallEcho(forename, surname, age, email, membership))
 }
 
 const noSuccess = () => {
@@ -17,12 +20,6 @@ const noSuccess = () => {
     <strong>Registration error!</strong> Check your input!
     </div>
         `);
-}
-
-const doRegister = () => {
-    var user = document.getElementById('inp_email').value
-    var pw = document.getElementById('inp_pw').value
-    registerCall(user, pw)
 }
 
 const Register = props => {

@@ -1,27 +1,35 @@
-import $ from 'jquery'
+import $ from "jquery";
+import nc from "next-connect";
+import cors from "cors";
 
 export function hi() {
-    console.log("hi")
+  console.log("hi");
 }
 
-export function registerCallEcho(user, pw) {
-    return user+pw
+export async function registerCall(v_forname, v_surname, v_age, v_email, v_status) {
+    const data = JSON.stringify(forname:v_forname, surname:v_surname, age:v_age, email:v_email, status:v_status)
+    const reponse = await fetch("http://localhost:8085/api/user/newUser", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      return data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
 
-export async function registerCall(user, pw) {
-        let response = await $.ajax({
-            url: 'http://localhost:8085/api/user/newUser',
-            method: 'POST',
-            dataType: 'json',
-            data: '{"forename":"Dubske", "surname":"steam", "status":"CEO"}',
-            success: function (data) {
-                console.log("You've successfully registered yourself on the website")
-                console.log("Your details: ")
-                console.log(data)
-            },
-            error: function (data) {
-                console.log("FAILED");
-            }
-        });
-};
+const handler = nc()
+  .use(cors())
+  .post(async (req, res) => {
+    const reponse = await fetch(remoteServerURL, config);
+    res.json(reponse);
+  });
 
+export default handler;
