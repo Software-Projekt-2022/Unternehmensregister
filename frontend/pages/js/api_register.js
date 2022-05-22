@@ -4,8 +4,12 @@ export function hi() {
     console.log("hi")
 }
 
-export const doRegister = async () => {
-        const response = await $.ajax({
+export function registerCallEcho(user, pw) {
+    return user
+}
+
+export async function registerCall(user, pw) {
+        let response = await $.ajax({
             url: 'http://localhost:8085/api/user/newUser',
             method: 'POST',
             dataType: 'json',
