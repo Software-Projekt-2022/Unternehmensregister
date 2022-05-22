@@ -49,7 +49,7 @@ export default function Home() {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/companies')}>Companies</a></li>
                             <li className="nav-item"><a className="nav-link"
-                                                        onClick={() => router.push('/offers')}>Offers</a>
+                                onClick={() => router.push('/jobs')}>Jobs</a>
                             </li>
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>

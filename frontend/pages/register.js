@@ -1,10 +1,12 @@
 import {useRouter} from 'next/router';
-import styles from "../styles/Home.module.css";
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import $ from 'jquery';
 
 const db_register = () => {
     $.ajax({
         type: "GET",
-        url: "127.0.0.1:8080/api/user/getUsers",
+        url: "127.0.0.1:8080/api/user/newUser",
         data: data,
         success: function(data) {
             console.log(data);
@@ -52,7 +54,7 @@ const Register = props => {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/companies')}>Companies</a></li>
                             <li className="nav-item"><a className="nav-link"
-                                                        onClick={() => router.push('/offers')}>Offers</a></li>
+                                                        onClick={() => router.push('/jobs')}>Jobs</a></li>
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>
                             <li className="nav-item"></li>
