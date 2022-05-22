@@ -1,11 +1,51 @@
 import {useRouter} from 'next/router';
-import styles from "../styles/Home.module.css";
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import $ from 'jquery';
 
-const db_register = () => {
+function hi() {
+    console.log("hi")
+}
+
+const noSuccess = () => {
+    let root = document.getElementById('api_check');
+    root.insertAdjacentHTML('beforebegin', `
+    <div className="alert alert-danger">
+    <strong>Registration error!</strong> Check your input!
+    </div>
+        `);
+}
+
+const doRegister = async () => {
+        const response = await $.ajax({
+            url: 'http://localhost:8085/api/user/newUser',
+            method: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                console.log("You've successfully registered yourself on the website")
+                router.push('/login');
+            },
+            error: function (data) {
+                noSuccess();
+            }
+        });
+};
+
+const db_register = async () => {
+
+    console.log("Trying to register the account...")
+
+    var user = document.getElementById('inp_email').innerHTML
+    var pw = document.getElementById('inp_pw').innerHTML
+
+    console.log(user, pw)
+
     $.ajax({
-        type: "GET",
-        url: "127.0.0.1:8080/api/user/getUsers",
-        data: data,
+        type: "POST",
+        url: "127.0.0.1:8080/api/user/newUser",
+        dataType: 'json', 
+        contentType: 'application/json', 
+        data: '{"user":user, "password":pw  }',
         success: function(data) {
             console.log(data);
         },
@@ -52,7 +92,7 @@ const Register = props => {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/companies')}>Companies</a></li>
                             <li className="nav-item"><a className="nav-link"
-                                                        onClick={() => router.push('/offers')}>Offers</a></li>
+                                                        onClick={() => router.push('/jobs')}>Jobs</a></li>
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>
                             <li className="nav-item"></li>
@@ -63,6 +103,8 @@ const Register = props => {
                     </div>
                 </div>
             </nav>
+
+            <button type="button" onClick={hi}>TEST</button>
 
             <section className="position-relative py-4 py-xl-5">
                 <div className="container">
@@ -89,7 +131,7 @@ const Register = props => {
                                         <div className="mb-3"><input className="form-control" type="password"
                                                                      name="password" placeholder="Password" id="inp_pw"/></div>
                                         <div className="mb-3">
-                                            <button className="btn btn-primary d-block w-100" type="submit" onClick={db_register}>Register
+                                            <button className="btn btn-primary d-block w-100" type="button" onClick={db_register}>Register
                                             </button>
                                         </div>
                                         <p className="text-muted">Forgot your password?</p>

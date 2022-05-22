@@ -1,6 +1,8 @@
 ### CUSTOM
 .idea/discord.xml
 .idea/jpa-buddy.xml
+.idea/deployment.xml
+.idea/dataSources.xml
 
 ### Java template
 # Compiled class file

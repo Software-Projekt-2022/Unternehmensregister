@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router';
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import {useRouter} from 'next/router';
 import $ from 'jquery';
 
 const showWarning = () => {
@@ -12,7 +14,7 @@ const showWarning = () => {
 
 const getData = async () => {
         const response = await $.ajax({
-            url: 'http://localhost:8080/api/company/getAll',
+            url: 'http://localhost:8085/api/company/getAll',
             method: 'GET',
             dataType: 'json',
             success: function (data) {
@@ -32,7 +34,7 @@ const renderTable = (data) => {
         <td>${element.id}</td>
         <td>${element.name}</td>
         <td>${element.abbrevation }</td>
-        <td><button className="btn btn-primary">View Profile</button></td>
+        <td><button className="btn btn-primary"><a href="profiles/${element.id}">View Profile</a></button></td>
         <td><button className="btn btn-primary">CEO</button></td>
         </tr>
         `));
@@ -77,7 +79,7 @@ const Companies = props => {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/companies')}>Companies</a></li>
                             <li className="nav-item"><a className="nav-link"
-                                                        onClick={() => router.push('/offers')}>Offers</a></li>
+                                                        onClick={() => router.push('/jobs')}>Jobs</a></li>
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>
                             <li className="nav-item"></li>

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
 import {useRouter} from 'next/router';
 
 export default function Home() {
@@ -49,7 +48,7 @@ export default function Home() {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/companies')}>Companies</a></li>
                             <li className="nav-item"><a className="nav-link"
-                                                        onClick={() => router.push('/offers')}>Offers</a>
+                                onClick={() => router.push('/jobs')}>Jobs</a>
                             </li>
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>
@@ -81,7 +80,7 @@ export default function Home() {
                                     of
                                     your connected companies. Apply on offers without any excess and connect with people
                                     in your region.</p>
-                                <button className="btn btn-primary fs-5 me-2 py-2 px-4" type="button">Job offers
+                                <button className="btn btn-primary fs-5 me-2 py-2 px-4" type="button" onClick={() => router.push('/jobs')}>Job offers
                                 </button>
                                 <button className="btn btn-outline-primary fs-5 py-2 px-4" type="button" onClick={() => router.push('/register')}>New account
                                 </button>

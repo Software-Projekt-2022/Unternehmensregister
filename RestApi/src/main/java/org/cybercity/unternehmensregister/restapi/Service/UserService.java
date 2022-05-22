@@ -18,6 +18,11 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    public User newUser(User user) {
+        userRepository.save(user);
+        return user;
+    }
+
     public List<User> getUsers() {
         return userRepository.findAll();
     }
@@ -62,5 +67,4 @@ public class UserService {
         obj.setStatus(newStatus);
         userRepository.save(obj);
     }
-
 }

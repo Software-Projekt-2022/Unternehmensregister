@@ -4,10 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.cybercity.unternehmensregister.restapi.Model.Job;
 import org.cybercity.unternehmensregister.restapi.Service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,15 +13,48 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/job")
-@CrossOrigin(origins = "localhost")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class JobController {
 
     private final JobService jobService;
 
-    @GetMapping(path = "getAll")
+    @GetMapping(path = "getAll", produces = "application/json")
+    @ResponseBody
     public List<Job> getJobs() {
         return jobService.getJobs();
+    }
+
+    @GetMapping(path = "getJobByID/{id}", produces = "application/json")
+    @ResponseBody
+    public Job getJobByID(@PathVariable long id) {
+        return jobService.getJobByID(id);
+    }
+
+    @PostMapping(path = "newJob", consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    public Job newJob(@RequestBody Job job) {
+        return jobService.newJob(job);
+    }
+
+    @PostMapping(path = "setWage/{id}")
+    public void setWage(@PathVariable long id, @RequestParam int lowerWage, @RequestParam int upperWage) {
+        jobService.setWage(id, lowerWage, upperWage);
+    }
+
+    @PostMapping(path = "setEmployer/{id}")
+    public void setWage(@PathVariable long id, @RequestParam long id_employer) {
+        jobService.setEmployer(id, id_employer);
+    }
+
+    @PostMapping(path = "setName/{id}")
+    public void setWage(@PathVariable long id, @RequestParam String newName) {
+        jobService.newName(id, newName);
+    }
+
+    @DeleteMapping(path = "deleteJob/{id}")
+    public void setWage(@PathVariable long id) {
+        jobService.deleteJob(id);
     }
 
 }

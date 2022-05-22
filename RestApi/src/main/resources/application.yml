@@ -1,0 +1,23 @@
+# Application stuff
+app:
+  name: CyberJobsAPI
+  description: Restful backend for the CyberJobs website
+# Server settings
+server:
+  port: 8085
+  address: 0.0.0.0
+# Database
+spring.datasource:
+  url: jdbc:postgresql://${CJ_HOST}:${CJ_PORT}/${CJ_DB}
+  username: ${CJ_USER}
+  password: ${CJ_PW}
+# JPA
+spring.jpa:
+  hibernate:
+    ddl-auto: none
+  show-sql: false
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+# Swagger
+springdoc.swagger-ui:
+  path: /docs.html
+  operationsSorter: method
