@@ -2,10 +2,7 @@ import {useRouter} from 'next/router';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import $ from 'jquery';
-
-function hi() {
-    console.log("hi")
-}
+import {hi, doRegister} from './js/api_register.js'
 
 const noSuccess = () => {
     let root = document.getElementById('api_check');
@@ -16,14 +13,16 @@ const noSuccess = () => {
         `);
 }
 
-const doRegister = async () => {
+const doRegisterNah = async () => {
         const response = await $.ajax({
             url: 'http://localhost:8085/api/user/newUser',
-            method: 'post',
+            method: 'POST',
             dataType: 'json',
+            data: '{"forename":"Dubske", "surname":"steam", "status":"CEO"}',
             success: function (data) {
                 console.log("You've successfully registered yourself on the website")
-                router.push('/login');
+                console.log("Your details: ")
+                console.log(data)
             },
             error: function (data) {
                 noSuccess();
@@ -50,6 +49,7 @@ const Register = props => {
                 </div>
             </div>
 
+        <button type="button" onClick={hi}>HI</button>
             <nav className="navbar navbar-light navbar-expand-md py-3">
                 <div className="container"><a className="navbar-brand d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#sidebar"><span
                     className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg
