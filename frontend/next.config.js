@@ -8,7 +8,7 @@ module.exports = {
   async rewrites() {
         return [
           {
-            source: '/:path*',
+            source: '/js/:path*',
             destination: 'http://localhost:8085/:path*',
           },
         ]

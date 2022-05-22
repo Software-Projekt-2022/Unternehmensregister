@@ -2,7 +2,7 @@ import {useRouter} from 'next/router';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import $ from 'jquery';
-import {registerCallEcho, registerCall} from './js/api_register.js'
+import {registerCallEcho, registerCall} from './api/api_register.js'
 
 const test = () => {
     var user = document.getElementById('inp_email').value

@@ -5,7 +5,7 @@ export function hi() {
 }
 
 export function registerCallEcho(user, pw) {
-    return user
+    return user+pw
 }
 
 export async function registerCall(user, pw) {
