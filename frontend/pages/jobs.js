@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {useRouter} from 'next/router';
 import $ from 'jquery';
-import {getID, setID} from './js/data.js'
 import React, { useState, useEffect } from 'react'
 
 const showWarning = () => {
@@ -98,8 +97,6 @@ const Jobs = props => {
                 </div>
             </nav>
             
-            <button type="button" onClick={() => setID(2)}>DEBUG SET</button>
-            <button type="button" onClick={() => console.log(getID)}>DEBUG GET</button>
             <section className="position-relative py-4 py-xl-5">
                 <div className="container">
 
