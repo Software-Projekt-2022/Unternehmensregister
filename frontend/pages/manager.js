@@ -21,7 +21,7 @@ const showWarning = () => {
 
 const getApplications = async () => {
   const response = await $.ajax({
-    url: "http://localhost:8085/api/application/getApplicationsForID/1",
+    url: "http://185.194.217.213:8085/api/application/getApplicationsForID/1",
     method: "GET",
     dataType: "json",
     success: function (data) {
