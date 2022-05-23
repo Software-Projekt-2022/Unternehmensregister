@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import {useRouter} from 'next/router';
 import $ from 'jquery';
 import {getID, setID} from './js/data.js'
+import React, { useState, useEffect } from 'react'
 
 const showWarning = () => {
     let root = document.getElementById('api_check');
@@ -43,6 +44,11 @@ const renderTable = (data) => {
 }
 
 const Jobs = props => {
+
+    useEffect(()=>{
+        getData()
+    })
+
   const router = useRouter();
     return (
         <div className="container-sm">
@@ -81,7 +87,7 @@ const Jobs = props => {
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/companies')}>Companies</a></li>
                             <li className="nav-item"><a className="nav-link"
-                                                        onClick={() => router.push('/Jobs')}>Jobs</a></li>
+                                                        onClick={() => router.push('/jobs')}>Jobs</a></li>
                             <li className="nav-item"><a className="nav-link"
                                                         onClick={() => router.push('/news')}>News</a></li>
                             <li className="nav-item"></li>
@@ -116,18 +122,12 @@ const Jobs = props => {
                             </tbody>
                         </table>
                     </div>
-                    <button className="btn btn-primary" type="button" onClick={getData}>Load Data</button>
                 </div>
             </section>
 
         </div>
 
     )
-}
-
-if (typeof window !== "undefined") {
-    console.log("OK");
-    getData();
 }
 
 export default Jobs;
