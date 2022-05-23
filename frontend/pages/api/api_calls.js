@@ -36,6 +36,34 @@ export async function managerGetCall(
       console.error("Error:", error);
     });
 }
+export async function newJobCall(
+  title,
+  lower,
+  upper,
+  emp
+) {
+  const data = JSON.stringify({
+    name: title,
+    lowerWage: lower,
+    upperWage: upper,
+    employer: emp
+  });
+  const reponse = await fetch("http://localhost:8085/api/job/newJob", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      return data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
 export async function registerCall(
   v_forname,
   v_surname,
