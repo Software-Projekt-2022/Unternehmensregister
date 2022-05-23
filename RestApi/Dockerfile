@@ -7,7 +7,7 @@ ARG PW
 FROM gradle:7.4.2-jdk11 as build
 
 COPY ./ ./
-RUN gradle build
+RUN gradle clean build
 
 FROM openjdk:17-alpine
 EXPOSE 8080
