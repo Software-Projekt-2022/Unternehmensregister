@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {useRouter} from 'next/router';
 import $ from 'jquery';
+import React, { useState, useEffect } from 'react'
 
 const showWarning = () => {
     let root = document.getElementById('api_check');
@@ -42,7 +43,10 @@ const renderTable = (data) => {
 }
 
 const Companies = props => {
-  const router = useRouter();
+    useEffect(() => {
+        getData()
+    })
+    const router = useRouter();
     return (
         <div className="container-sm">
 
@@ -54,7 +58,7 @@ const Companies = props => {
                 <div className="offcanvas-body">
                     <h5>GitHub</h5>
                     <div className="btn-group">
-                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank">Organization</a></button><br />
+                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank" rel="noreferrer">Organization</a></button><br />
                         <button className="btn btn-warning" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">Repository</a></button><br />
                     </div>
                 </div>
@@ -112,18 +116,12 @@ const Companies = props => {
                             </tbody>
                         </table>
                     </div>
-                    <button className="btn btn-primary" type="button" onClick={getData}>Load Data</button>
                 </div>
             </section>
 
         </div>
 
     )
-}
-
-if (typeof window !== "undefined") {
-    console.log("OK");
-    getData();
 }
 
 export default Companies;

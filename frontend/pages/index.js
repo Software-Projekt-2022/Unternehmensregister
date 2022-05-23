@@ -20,7 +20,7 @@ export default function Home() {
                 <div className="offcanvas-body">
                     <h5>GitHub</h5>
                     <div className="btn-group">
-                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank">Organization</a></button><br />
+                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank" rel="noreferrer">Organization</a></button><br />
                         <button className="btn btn-warning" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">Repository</a></button><br />
                     </div>
                 </div>
