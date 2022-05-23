@@ -10,7 +10,7 @@ const doRegister = () => {
     var surname = document.getElementById('inp_surname').value
     var age = document.getElementById('inp_age').value
     var membership = document.getElementById('inp_membership').value
-    console.log(registerCallEcho(forename, surname, age, email, membership))
+    console.log(registerCall(forename, surname, age, email, membership))
 }
 
 const noSuccess = () => {
@@ -41,7 +41,6 @@ const Register = props => {
                 </div>
             </div>
 
-        <button type="button" onClick={test}>DEBUG</button>
             <nav className="navbar navbar-light navbar-expand-md py-3">
                 <div className="container"><a className="navbar-brand d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#sidebar"><span
                     className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg
@@ -95,10 +94,16 @@ const Register = props => {
                                     </div>
                                     <div id="api_check"></div>
                                     <form className="text-center" method="post">
+                                        <div className="mb-3"><input className="form-control" type="text" name="text"
+                                                                     placeholder="Forename" id="inp_forename"/></div>
+                                        <div className="mb-3"><input className="form-control" type="surname" name="surname"
+                                                                     placeholder="Surname" id="inp_surname"/></div>
+                                        <div className="mb-3"><input className="form-control" type="text" name="age"
+                                                                     placeholder="Age" id="inp_age"/></div>
                                         <div className="mb-3"><input className="form-control" type="email" name="email"
                                                                      placeholder="Email" id="inp_email"/></div>
-                                        <div className="mb-3"><input className="form-control" type="password"
-                                                                     name="password" placeholder="Password" id="inp_pw"/></div>
+                                        <div className="mb-3"><input className="form-control" type="text"
+                                                                     name="membership" placeholder="Membership" id="inp_membership"/></div>
                                         <div className="mb-3">
                                             <button className="btn btn-primary d-block w-100" type="button" onClick={doRegister}>Register
                                             </button>
