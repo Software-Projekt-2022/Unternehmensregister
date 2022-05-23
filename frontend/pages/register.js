@@ -4,13 +4,25 @@ import styles from '../styles/Home.module.css'
 import $ from 'jquery';
 import {registerCall} from './api/api_register.js'
 
-const doRegister = () => {
+const doRegister = async () => {
     var email = document.getElementById('inp_email').value
     var forename = document.getElementById('inp_forename').value
     var surname = document.getElementById('inp_surname').value
     var age = document.getElementById('inp_age').value
     var membership = document.getElementById('inp_membership').value
-    console.log(registerCall(forename, surname, age, email, membership))
+    const reponse = await registerCall(forename, surname, age, email, membership)
+    if (reponse != null) {
+        success()
+    } else {
+        noSuccess()
+    }
+}
+
+const success = () => {
+    let root = document.getElementById('api_check');
+    root.insertAdjacentHTML('beforebegin', `
+    <div className="alert alert-danger">
+    <strong>Registration complete!</strong>`);
 }
 
 const noSuccess = () => {
