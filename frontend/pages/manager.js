@@ -21,7 +21,7 @@ const showWarning = () => {
 
 const getApplications = async () => {
   const response = await $.ajax({
-    url: "http://localhost:8085/api/company/getAll",
+    url: "http://localhost:8085/api/application/getApplicationsForID/1",
     method: "GET",
     dataType: "json",
     success: function (data) {
@@ -42,10 +42,9 @@ const renderTable = (data) => {
       `
         <tr>
         <td>${element.id}</td>
-        <td>${element.name}</td>
-        <td>${element.abbrevation}</td>
-        <td><button className="btn btn-primary"><a href="profiles/${element.id}">View Profile</a></button></td>
-        <td><button className="btn btn-primary">CEO</button></td>
+        <td>${element.applicant_id}</td>
+        <td>${element.job_id}</td>
+        <td><button className="btn btn-primary"><a href="application/${element.id}">Open Application</a></button></td>
         </tr>
         `
     )
@@ -64,11 +63,10 @@ const Manager = (props) => {
         <table className="table table-hover">
           <thead className="table-dark">
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Abbrevation</th>
-              <th>Profile</th>
-              <th>Ceo</th>
+              <th>Application ID</th>
+              <th>Applicant</th>
+              <th>Job</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="table_body"></tbody>
