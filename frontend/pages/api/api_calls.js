@@ -44,8 +44,8 @@ export async function newJobCall(
 ) {
   const data = JSON.stringify({
     name: title,
-    lowerWage: lower,
-    upperWage: upper,
+    wageLower: lower,
+    wageUpper: upper,
     employer: emp
   });
   const reponse = await fetch("http://localhost:8085/api/job/newJob", {
