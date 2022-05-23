@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {useRouter} from 'next/router';
 import $ from 'jquery';
+import {getID, setID} from './js/data.js'
 
 const showWarning = () => {
     let root = document.getElementById('api_check');
@@ -54,11 +55,12 @@ const Jobs = props => {
                 <div className="offcanvas-body">
                     <h5>GitHub</h5>
                     <div className="btn-group">
-                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank">Organization</a></button><br />
+                        <button className="btn btn-primary" type="button"><a href="https://github.com/Software-Projekt-2022/" target="_blank" rel="noreferrer">Organization</a></button><br />
                         <button className="btn btn-warning" type="button"><a href="https://github.com/Software-Projekt-2022/Unternehmensregister">Repository</a></button><br />
                     </div>
                 </div>
             </div>
+
             <nav className="navbar navbar-light navbar-expand-md py-3">
                 <div className="container"><a className="navbar-brand d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#sidebar"><span
                     className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg
@@ -89,7 +91,9 @@ const Jobs = props => {
                     </div>
                 </div>
             </nav>
-
+            
+            <button type="button" onClick={() => setID(2)}>DEBUG SET</button>
+            <button type="button" onClick={() => console.log(getID)}>DEBUG GET</button>
             <section className="position-relative py-4 py-xl-5">
                 <div className="container">
 
