@@ -20,7 +20,7 @@ export async function managerGetCall(
     email: v_email,
     status: v_status,
   });
-  const reponse = await fetch("http://localhost:8085/api/user/newUser", {
+  const reponse = await fetch("http://185.194.217.213:8085/api/user/newUser", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export async function newJobCall(
     wageUpper: upper,
     employer: emp
   });
-  const reponse = await fetch("http://localhost:8085/api/job/newJob", {
+  const reponse = await fetch("http://185.194.217.213:8085/api/job/newJob", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export async function registerCall(
     email: v_email,
     status: v_status,
   });
-  const reponse = await fetch("http://localhost:8085/api/user/newUser", {
+  const reponse = await fetch("http://185.194.217.213:8085/api/user/newUser", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
