@@ -18,7 +18,7 @@ env:
 #3
 jobs:
   build_and_push_frontend:
-    runs-on: windows-latest
+    runs-on: ubuntu:20.04
     steps:
       - name: Checkout to repo
         uses: actions/checkout@v2
