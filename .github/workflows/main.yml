@@ -38,7 +38,7 @@ jobs:
         run: if [ ! - z "(doctl registry repository list | grep "$(echo $IMAGE_NAME_FRONTEND)")" ]; then doctl registry repository delete-manifest $(echo $IMAGE_NAME_FRONTEND) $(doctl registry repository list-tags $(echo $IMAGE_NAME_FRONTEND) | grep -o "sha.*") --force; else echo "No repository"; fi
 
       - name: Push image to DigitalOcean Container Registry
-        run: docker push $(echo $REGISTRY)/$(echo IMAGE_NAME_FRONTEND)
+        run: docker push $(echo $REGISTRY)/$(echo $IMAGE_NAME_FRONTEND)
     
   build_and_push_backend:
     runs-on: ubuntu-20.04
@@ -61,7 +61,7 @@ jobs:
         run: if [ ! - z "(doctl registry repository list | grep "$(echo $IMAGE_NAME_BACKEND)")" ]; then doctl registry repository delete-manifest $(echo $IMAGE_NAME_BACKEND) $(doctl registry repository list-tags $(echo $IMAGE_NAME_BACKEND) | grep -o "sha.*") --force; else echo "No repository"; fi
 
       - name: Push image to DigitalOcean Container Registry
-        run: docker push $(echo $REGISTRY)/$(echo IMAGE_NAME_BACKEND)
+        run: docker push $(echo $REGISTRY)/$(echo $IMAGE_NAME_BACKEND)
 
   deploy:
     runs-on: ubuntu-20.04
