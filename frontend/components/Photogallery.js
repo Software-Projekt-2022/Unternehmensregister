@@ -15,7 +15,7 @@ const Photogallery = () => {
         >
           <div className="col item">
             <a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-              <Image
+              <img
                 alt="img"
                 className="img-fluid"
                 src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
@@ -24,7 +24,7 @@ const Photogallery = () => {
           </div>
           <div className="col item">
             <a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-              <Image
+              <img
                 alt="img"
                 className="img-fluid"
                 src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
@@ -33,7 +33,7 @@ const Photogallery = () => {
           </div>
           <div className="col item">
             <a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-              <Image
+              <img
                 alt="img"
                 className="img-fluid"
                 src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
@@ -42,7 +42,7 @@ const Photogallery = () => {
           </div>
           <div className="col item">
             <a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-              <Image
+              <img
                 alt="img"
                 className="img-fluid"
                 src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
@@ -51,7 +51,7 @@ const Photogallery = () => {
           </div>
           <div className="col item">
             <a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-              <Image
+              <img
                 alt="img"
                 className="img-fluid"
                 src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
@@ -60,7 +60,7 @@ const Photogallery = () => {
           </div>
           <div className="col item">
             <a href="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-              <Image
+              <img
                 alt="img"
                 className="img-fluid"
                 src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
