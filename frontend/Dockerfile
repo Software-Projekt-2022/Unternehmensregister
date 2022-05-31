@@ -1,4 +1,4 @@
-FROM node:lts as runner
+FROM node:lts
 WORKDIR /CyberJobsWebsite
 ENV NODE_ENV production
 COPY . .
