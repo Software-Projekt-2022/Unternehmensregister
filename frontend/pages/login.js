@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import $ from "jquery";
-import LoginForm from "../components/LoginForm.js";
 
 const db_login = () => {
   $.ajax({
