@@ -4,11 +4,17 @@ import '../styles/Animated-Type-Heading.css'
 import Layout from '../components/Layout'
 import Head from "next/head";
 import {useEffect} from "react";
+import { SessionProvider } from "next-auth/react"
 
-function MyApp({Component, pageProps}) {
+function MyApp({
+    Component,
+    pageProps: { session, ...pageProps },
+  }) {
     useEffect(() => {
         import("bootstrap/dist/js/bootstrap");
     }, []);
+
+    <SessionProvider session={session}>
 
     <Head>
         <meta charset="utf-8"/>
@@ -20,6 +26,7 @@ function MyApp({Component, pageProps}) {
             <Component {...pageProps} />
         </Layout>
     )
+    </SessionProvider>
 }
 
 export default MyApp
