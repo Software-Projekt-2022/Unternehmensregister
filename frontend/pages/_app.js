@@ -1,6 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css'
 import '../styles/Animated-Type-Heading.css'
+import React from 'react';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import Layout from '../components/Layout'
 import Head from "next/head";
 import {useEffect} from "react";
