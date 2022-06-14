@@ -14,7 +14,6 @@ function MyApp({
         import("bootstrap/dist/js/bootstrap");
     }, []);
 
-    <SessionProvider session={session}>
 
     <Head>
         <meta charset="utf-8"/>
@@ -22,11 +21,13 @@ function MyApp({
     </Head>
 
     return (
+        <SessionProvider session={session}>
         <Layout>
             <Component {...pageProps} />
         </Layout>
+        </SessionProvider>
     )
-    </SessionProvider>
+   
 }
 
 export default MyApp

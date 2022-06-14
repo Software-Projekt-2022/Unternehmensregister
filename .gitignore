@@ -3,6 +3,8 @@
 .idea/jpa-buddy.xml
 .idea/deployment.xml
 .idea/dataSources.xml
+*.env
+.env
 
 ### Java template
 # Compiled class file
