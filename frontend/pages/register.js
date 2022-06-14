@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import $ from 'jquery';
 import { registerCall } from './api/api_calls.js'
 import { useSession } from "next-auth/react"
+import NoPerm from '../components/NoPerm';
 
 const doRegister = async () => {
     var email = document.getElementById('inp_email').value
@@ -39,9 +40,9 @@ const Register = props => {
     const { data: session } = useSession()
   if (session) {
     return (
-        <>
-          <h2>You are already logged in. Sign out to create a new Account!</h2>
-        </>
+        <div className="alert alert-warning" role="alert">
+        You can not register while logged in.
+        </div>
       )
   }
   return (
