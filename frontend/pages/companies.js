@@ -3,6 +3,8 @@ import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import $ from "jquery";
 import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react"
+import NoPerm from '../components/NoPerm';
 
 const showWarning = () => {
   let root = document.getElementById("api_check");
@@ -50,10 +52,15 @@ const renderTable = (data) => {
 };
 
 const Companies = (props) => {
+  const { data: session } = useSession()
   useEffect(() => {
+    if (session) {
     getData();
+    }
   });
   const router = useRouter();
+  
+  if (session) {
   return (
     <div>
       <Head>
@@ -80,6 +87,12 @@ const Companies = (props) => {
       </div>
     </div>
   );
-};
+}
+return (
+  <>
+    <NoPerm />
+  </>
+)
+}
 
 export default Companies;

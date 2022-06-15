@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css'
 import $ from 'jquery';
 import { registerCall } from './api/api_calls.js'
 import { useSession } from "next-auth/react"
-import NoPerm from '../components/NoPerm';
 
 const doRegister = async () => {
     var email = document.getElementById('inp_email').value

@@ -36,7 +36,7 @@ const renderTable = (data) => {
         <td>${element.name}</td>
         <td>${element.wageLower}</td>
         <td>${element.wageUpper}</td>
-        <td><button className="btn btn-primary"><a href="profiles/${element.employer}">View Profile</a></button></td>
+        <td><button className="btn btn-primary" onClick=routing(${element.id})>View Profile</button></td>
         </tr>
         `));
 
@@ -44,8 +44,16 @@ const renderTable = (data) => {
 
 const Jobs = props => {
 
+    const router = useRouter();
+
+    const routing = () => {
+        router.push(
+            { pathname: "/profile", query: { id: id } },
+            "/profile")
+    }
+
     useEffect(() => {
-        getData()
+        getData();
     })
 
     return (

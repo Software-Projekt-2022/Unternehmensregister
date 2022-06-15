@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import $ from "jquery";
 import { managerGetCall } from "./api/api_calls.js";
+import NoPerm from '../components/NoPerm';
 import React, { useState, useEffect } from "react";
 
 const id = 1;

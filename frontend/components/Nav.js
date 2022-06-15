@@ -115,6 +115,11 @@ const Nav = () => {
                 Home
               </a>
             </li>
+            <li className="nav-item">
+                <a className="nav-link" onClick={() => router.push("/jobs")}>
+                  Jobs
+                </a>
+              </li>
           </ul>
           <AuthButton />
         </div>
