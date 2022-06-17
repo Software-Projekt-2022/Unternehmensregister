@@ -10,7 +10,7 @@ export default function AuthButton() {
   if (session) {
     return (
       <>
-        <Popup trigger={<button className="btn btn-primary fs-6 me-0 py-2 px-4"> Account </button>} position="bottom top">
+        <Popup trigger={<button className="btn btn-primary fs-6 me-0 py-2 px-4"> <img src={session.user.image} className="rounded-circle" width="32" /> Account </button>} position="bottom top">
           <img src={session.user.image} className="rounded img-fluid" />
           <button className="btn btn-info fs-6 me-0 py-2 px-4" onClick={() => {router.push(
             { pathname: "/profile", query: { id: 1 } },
