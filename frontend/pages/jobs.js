@@ -85,6 +85,7 @@ const Jobs = (props) => {
                 <th>Min. Wage</th>
                 <th>Max. Wage</th>
                 <th>Employer</th>
+                <th>Apply</th>
               </tr>
             </thead>
             <tbody id="table_body"></tbody>
