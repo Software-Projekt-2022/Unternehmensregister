@@ -61,8 +61,16 @@ const Nav = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={() => router.push("/news")}>
-                  News
+                <a
+                  className="nav-link"
+                  onClick={() => {
+                    router.push(
+                      { pathname: "/applications", query: { id: 1 } },
+                      "/applications"
+                    );
+                  }}
+                >
+                  My Applications
                 </a>
               </li>
               <li className="nav-item"></li>
@@ -116,10 +124,10 @@ const Nav = () => {
               </a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" onClick={() => router.push("/jobs")}>
-                  Jobs
-                </a>
-              </li>
+              <a className="nav-link" onClick={() => router.push("/jobs")}>
+                Jobs
+              </a>
+            </li>
           </ul>
           <AuthButton />
         </div>
