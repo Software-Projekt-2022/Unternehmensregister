@@ -43,7 +43,7 @@ const renderTable = (data) => {
         <td>${element.name}</td>
         <td>${element.wageLower}</td>
         <td>${element.wageUpper}</td>
-        <td><button className="btn btn-primary" onClick=routing(${element.id})>View Profile</button></td>
+        <td><button class="btn btn-primary" onClick=routing(${element.id})>View Profile</button></td>
         </tr>
         `
     )
@@ -85,7 +85,6 @@ const Jobs = (props) => {
                 <th>Min. Wage</th>
                 <th>Max. Wage</th>
                 <th>Employer</th>
-                <th>Apply</th>
               </tr>
             </thead>
             <tbody id="table_body"></tbody>
