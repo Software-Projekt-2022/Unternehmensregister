@@ -45,7 +45,7 @@ const Nav = () => {
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
                 <Link href="/">
-                  <a className="nav-link">Home</a>
+                  <a className="nav-link">Startseite</a>
                 </Link>
               </li>
               <li className="nav-item">
@@ -55,12 +55,12 @@ const Nav = () => {
               </li>
               <li className="nav-item">
                 <Link href="/companies">
-                  <a className="nav-link">Companies</a>
+                  <a className="nav-link">Unternehmen</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link href="/profiles">
-                  <a className="nav-link">Profiles</a>
+                  <a className="nav-link">Profile</a>
                 </Link>
               </li>
               <li className="nav-item">
@@ -73,7 +73,7 @@ const Nav = () => {
                     );
                   }}
                 >
-                  My Applications
+                  Bewerbungen
                 </a>
               </li>
             </ul>

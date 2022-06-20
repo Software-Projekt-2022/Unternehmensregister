@@ -16,10 +16,10 @@ export default function ProfileCard(props) {
             {props.forename} {props.surname}
           </h4>
           <p className="text-secondary mb-1">
-            {props.status} at {props.company}
+            {props.status} bei {props.company}
           </p>
           <Link href={{ pathname: "/profile", query: { id: props.id } }}>
-            <button className="btn btn-primary">View Profile</button>
+            <button className="btn btn-primary">Profil anzeigen</button>
           </Link>
         </div>
       </div>

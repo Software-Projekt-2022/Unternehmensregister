@@ -13,12 +13,12 @@ const ProfileBig = (props) => {
             {props.user.forename} {props.user.surname}
           </h4>
           <p className="text-secondary mb-1">
-            {props.user.status} at {props.company.name}
+            {props.user.status} bei {props.company.name}
           </p>
           <p className="text-muted font-size-sm" id="p_location">
-            Age {props.user.age}
+            Alter: {props.user.age}
           </p>
-          <button className="btn btn-primary">Add to friends</button>
+          <button className="btn btn-primary">Email senden</button>
           <button className="btn btn-outline-primary">Chat</button>
         </div>
       </div>

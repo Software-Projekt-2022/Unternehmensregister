@@ -6,7 +6,7 @@ const Photogallery = () => {
       <div className="container">
         <div className="row mb-5">
           <div className="col-md-8 col-xl-6 text-center mx-auto">
-            <h2>Featured companies</h2>
+            <h2>Vertretene Unternehmen</h2>
           </div>
         </div>
         <div

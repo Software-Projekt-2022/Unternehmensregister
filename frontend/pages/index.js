@@ -21,20 +21,21 @@ const Index = () => (
         <div className="row h-100">
           <div className="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
             <div>
-              <h2 className="text-uppercase fw-bold mb-3">Get started today</h2>
+              <h2 className="text-uppercase fw-bold mb-3">Starte deine Karriere noch heute</h2>
               <p className="mb-4">
-                Log in to get started and browse through all the various job
-                offers of your connected companies. Apply on offers without any
-                excess and connect with people in your region.
+                Nachdem du dich eingeloggt hast, erwartet dich eine Welt voller Möglichkeiten und Chancen.
+                Hol Job-Angebote ein und bewerbe dich bei Unternehmen deiner Wahl, ohne jegliche Kosten.
               </p>
               <Link href="/jobs">
                 <button className="btn btn-primary fs-5 me-2 py-2 px-4">
-                  Job offers
+                  Offene Jobs
                 </button>
               </Link>
+              <Link href="https://cyber-city.systems/register">
               <button className="btn btn-outline-primary fs-5 py-2 px-4">
-                New account
+                Kein Account?
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -59,7 +60,7 @@ const Index = () => (
             </div>
             <div className="px-3">
               <h2 className="fw-bold mb-0">300+</h2>
-              <p className="mb-0">Users</p>
+              <p className="mb-0">Nutzer</p>
             </div>
           </div>
         </div>
@@ -83,7 +84,7 @@ const Index = () => (
             </div>
             <div className="px-3">
               <h2 className="fw-bold mb-0">20+</h2>
-              <p className="mb-0">Companies</p>
+              <p className="mb-0">Unternehmen</p>
             </div>
           </div>
         </div>
@@ -108,7 +109,7 @@ const Index = () => (
             </div>
             <div className="px-3">
               <h2 className="fw-bold mb-0">20+</h2>
-              <p className="mb-0">Open jobs</p>
+              <p className="mb-0">Offene Jobs</p>
             </div>
           </div>
         </div>
@@ -131,7 +132,7 @@ const Index = () => (
             </div>
             <div className="px-3">
               <h2 className="fw-bold mb-0">89</h2>
-              <p className="mb-0">Succesfull applications</p>
+              <p className="mb-0">Erfolgreiche Vermittlungen</p>
             </div>
           </div>
         </div>

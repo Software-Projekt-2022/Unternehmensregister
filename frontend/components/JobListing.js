@@ -13,19 +13,19 @@ export default function JobListing(props) {
                   {props.wage_lower}€ - {props.wage_upper}€
                 </span>
               </div>
-              <div className="col-sm-1 py-2 fs-3">
-                <button className="btn btn-primary fs-6 me-2 py-1 px-3">
-                  Employer
+              <div className="col-sm-1 py-2 fs-4">
+                <button className="btn btn-primary fs-6 me-2 py-1 px-2">
+                  Arbeitgeber
                 </button>{" "}
               </div>
-              <div className="col-sm-3 py-2 fs-4">
+              <div className="col-sm-3 py-2 fs-5">
                 <span className="badge bg-secondary m-1 px-1">Abitur</span>
                 <span className="badge bg-secondary m-1 px-1">Sekundär II</span>
                 <span className="badge bg-secondary m-1 px-1">Studiert</span>
               </div>
-              <div className="col-sm-1 text-lg-end">
+              <div className="col-sm-1 text-lg-end fs-2">
                 <a href="#" className="btn btn-warning stretched-link">
-                  Apply
+                  Bewerben!
                 </a>
               </div>
             </div>

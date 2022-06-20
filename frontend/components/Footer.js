@@ -4,26 +4,18 @@ const Footer = () => {
                 <div className="container py-4 py-lg-5">
                     <div className="row justify-content-center">
                         <div className="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
-                            <h3 className="fs-6">Services</h3>
+                            <h3 className="fs-6">Unser Service</h3>
                             <ul className="list-unstyled">
-                                <li><a className="link-secondary" href="#">Home</a></li>
-                                <li><a className="link-secondary" href="#">Create a new account</a></li>
+                                <li><a className="link-secondary" href="#">Startseite</a></li>
+                                <li><a className="link-secondary" href="https://cyber-city.systems/register">Neuer Account</a></li>
                                 <li><a className="link-secondary" href="#"></a></li>
-                            </ul>
-                        </div>
-                        <div className="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
-                            <h3 className="fs-6">About</h3>
-                            <ul className="list-unstyled">
-                                <li><a className="link-secondary" href="#">News</a></li>
-                                <li><a className="link-secondary" href="#">Team</a></li>
-                                <li></li>
                             </ul>
                         </div>
                         <div className="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
                             <h3 className="fs-6">CyberCity</h3>
                             <ul className="list-unstyled">
-                                <li><a className="link-secondary" href="#">Landing Page</a></li>
-                                <li><a className="link-secondary" href="#">Other Services</a></li>
+                                <li><a className="link-secondary" href="https://cyber-city.systems/">Startseite</a></li>
+                                <li><a className="link-secondary" href="https://cyber-city.systems/login">Cyber City Login</a></li>
                                 <li></li>
                             </ul>
                         </div>
@@ -38,7 +30,7 @@ const Footer = () => {
                                     <path
                                         d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
                                 </svg></span><span>CyberJobs</span></div>
-                            <p className="text-muted copyright">Jobs and social solutions for everyone!</p>
+                            <p className="text-muted copyright">Job-Möglichkeiten für jeden!</p>
                         </div>
                     </div>
                     <hr />
