@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
 import AuthButton from "./AuthButton";
+import Link from "next/link";
 
 const Nav = () => {
   const router = useRouter();
@@ -43,22 +44,24 @@ const Nav = () => {
           <div className="collapse navbar-collapse" id="navcol-1">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a className="nav-link" onClick={() => router.push("/#")}>
-                  Home
-                </a>
+                <Link href="/">
+                  <a className="nav-link">Home</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  onClick={() => router.push("/companies")}
-                >
-                  Companies
-                </a>
+                <Link href="/jobs">
+                  <a className="nav-link">Jobs</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={() => router.push("/jobs")}>
-                  Jobs
-                </a>
+                <Link href="/companies">
+                  <a className="nav-link">Companies</a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/profiles">
+                  <a className="nav-link">Profiles</a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a
@@ -73,8 +76,6 @@ const Nav = () => {
                   My Applications
                 </a>
               </li>
-              <li className="nav-item"></li>
-              <li className="nav-item"></li>
             </ul>
             <AuthButton />
           </div>
@@ -119,14 +120,14 @@ const Nav = () => {
         <div className="collapse navbar-collapse" id="navcol-1">
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <a className="nav-link" onClick={() => router.push("/#")}>
-                Home
-              </a>
+              <Link href="/">
+                <a className="nav-link">Home</a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" onClick={() => router.push("/jobs")}>
-                Jobs
-              </a>
+              <Link href="/jobs">
+                <a className="nav-link">Jobs</a>
+              </Link>
             </li>
           </ul>
           <AuthButton />

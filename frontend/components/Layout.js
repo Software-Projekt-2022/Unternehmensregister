@@ -1,51 +1,45 @@
-import Nav from './Nav'
-import Footer from '../components/Footer';
+import Head from "next/head";
+import Link from "next/link";
+import Footer from "./Footer";
+import NProgress from "nprogress";
+import Router from "next/router";
+import Nav from "./Nav";
 
-const Layout = ({ children }) => {
-    return (
-        <div className="container-sm">
-            <Nav />
-            <div className="offcanvas offcanvas-start" id="sidebar">
-                <div className="offcanvas-header">
-                    <h1 className="offcanvas-title" href="https://github.com/DubskySteam">
-                        Project
-                    </h1>
-                    <button
-                        type="button"
-                        className="btn-close text-reset"
-                        data-bs-dismiss="offcanvas"
-                    ></button>
-                </div>
-                <div className="offcanvas-body">
-                    <h5>GitHub</h5>
-                    <div className="btn-group">
-                        <button className="btn btn-primary" type="button">
-                            <a
-                                href="https://github.com/Software-Projekt-2022/"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Organization
-                            </a>
-                        </button>
-                        <br />
-                        <button className="btn btn-warning" type="button">
-                            <a href="https://github.com/Software-Projekt-2022/Unternehmensregister">
-                                Repository
-                            </a>
-                        </button>
-                        <br />
-                    </div>
-                </div>
-            </div>
-            <section className="position-relative py-4 py-xl-5">
-                <div className="container">
-                    {children}
-                </div>
-            </section>
-            <Footer />            
-        </div>
-    )
+Router.onRouteChangeStart = url => {
+    console.log(url);
+    NProgress.start();
 }
 
-export default Layout
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
+
+const Layout = ({ children, title }) => (
+  <div>
+    <Head>
+      <title>CyberJobs - {title}</title>
+      <meta name="description" content="Job hub for CyberCity" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+    </Head>
+    <header>
+      <Nav />
+    </header>
+
+    {children}
+
+    <Footer />
+    <Link href="/">
+        <a>Home</a>
+      </Link>
+      <Link href="/profiles">
+        <a>Profiles</a>
+      </Link>
+      <Link href="/jobs">
+        <a>Jobs</a>
+      </Link>
+      <Link href={{ pathname: "/profile", query: { id: 2 } }}>
+        <a>Profile</a>
+      </Link>
+  </div>
+);
+
+export default Layout;
