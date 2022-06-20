@@ -1,8 +1,12 @@
 import Layout from '../components/Layout';
 
-export default () => (
-    <Layout title="Error">
+const _error = () => {
+    return (
+        <Layout title="Error">
         <h1>Error</h1>
         <p>STOFF</p>
     </Layout>
-)
+    )
+}
+
+export default _error;
