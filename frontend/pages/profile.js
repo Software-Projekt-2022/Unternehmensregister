@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import _error from "./_error";
 import { Component } from "react";
+import ProfileBig from "../components/ProfileBig";
 import Router, { withRouter } from "next/router";
 import { useRouter } from "next/router";
 
@@ -27,29 +28,7 @@ class Profile extends Component {
 
     return (
       <Layout title="Profile">
-        <div className="card-body">
-          <div className="d-flex flex-column align-items-center text-center">
-            <img
-              src="https://avatars.githubusercontent.com/u/23001099?v=4"
-              alt="Profile Image"
-              className="rounded-circle"
-              width="150"
-            />
-            <div className="mt-3">
-              <h4>
-                {user.forename} {user.surname}
-              </h4>
-              <p className="text-secondary mb-1">
-                {user.status} at {company.name}
-              </p>
-              <p className="text-muted font-size-sm" id="p_location">
-                Age {user.age}
-              </p>
-              <button className="btn btn-primary">Add to friends</button>
-              <button className="btn btn-outline-primary">Chat</button>
-            </div>
-          </div>
-        </div>
+        <ProfileBig user={user} profile={profile} company={company} />
       </Layout>
     );
   }

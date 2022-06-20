@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import ProfileCard from "../components/ProfileCard";
 import { Component } from "react";
+import { useSession } from "next-auth/react"
 
 class Profiles extends Component {
   static getInitialProps = async () => {
