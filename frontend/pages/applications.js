@@ -21,17 +21,7 @@ class Profile extends Component {
     return (
       <Layout title="Applications">
         <Protected>
-          {data.map(({ application_id, job_id, employer_id, status }) => (
-            <div>
-              <ApplicationCard
-                key={id}
-                id={id}
-                job_id={job_id}
-                employer={employer}
-                status={status}
-              />
-            </div>
-          ))}
+
         </Protected>
       </Layout>
     );
