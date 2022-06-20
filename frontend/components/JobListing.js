@@ -18,12 +18,12 @@ export default function JobListing(props) {
                   Employer
                 </button>{" "}
               </div>
-              <div className="col-sm-4 py-2 fs-4">
+              <div className="col-sm-3 py-2 fs-4">
                 <span className="badge bg-secondary m-1 px-1">Abitur</span>
                 <span className="badge bg-secondary m-1 px-1">Sekundär II</span>
                 <span className="badge bg-secondary m-1 px-1">Studiert</span>
               </div>
-              <div className="col-sm-2 text-lg-end">
+              <div className="col-sm-1 text-lg-end">
                 <a href="#" className="btn btn-warning stretched-link">
                   Apply
                 </a>
