@@ -4,6 +4,7 @@ import { Component } from "react";
 import ProfileBig from "../components/ProfileBig";
 import Router, { withRouter } from "next/router";
 import { useRouter } from "next/router";
+import Protected from "../components/Protected";
 
 class Profile extends Component {
   static getInitialProps = async ({ query }) => {
@@ -28,7 +29,9 @@ class Profile extends Component {
 
     return (
       <Layout title="Profile">
-        <ProfileBig user={user} profile={profile} company={company} />
+        <Protected>
+          <ProfileBig user={user} profile={profile} company={company} />
+        </Protected>
       </Layout>
     );
   }
