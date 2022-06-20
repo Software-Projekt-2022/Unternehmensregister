@@ -19,8 +19,8 @@ class Jobs extends Component {
         <section className="py-4 py-xl-5">
                 <div className="container h-100">
           {JobArray.map(({ id, name, wageLower, wageUpper, employer }) => (
-            <div>
-                <JobListing key={id} id={id} name={name} wage_lower={wageLower} wage_upper={wageUpper} employer={employer} />
+            <div key={id}>
+                <JobListing id={id} name={name} wage_lower={wageLower} wage_upper={wageUpper} employer={employer} />
         </div>
           ))}
           </div>

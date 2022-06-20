@@ -19,9 +19,8 @@ class Profiles extends Component {
       <Layout title="Profiles">
         <Protected>
           {profileArray.map(({ id, age, forename, surname, status }) => (
-            <div>
+            <div key={id}>
               <ProfileCard
-                key={id}
                 id={id}
                 age={age}
                 forename={forename}
