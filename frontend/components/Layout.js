@@ -27,18 +27,6 @@ const Layout = ({ children, title }) => (
     {children}
 
     <Footer />
-    <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/profiles">
-        <a>Profiles</a>
-      </Link>
-      <Link href="/jobs">
-        <a>Jobs</a>
-      </Link>
-      <Link href={{ pathname: "/profile", query: { id: 2 } }}>
-        <a>Profile</a>
-      </Link>
   </div>
 );
 
