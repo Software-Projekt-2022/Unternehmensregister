@@ -1,70 +1,31 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import { useSession } from "next-auth/react";
-import NoPerm from "../components/NoPerm";
-import ApplicationForm from "../components/ApplicationForm";
-import $ from "jquery";
+import Layout from "../components/Layout";
+import _error from "./_error";
+import { Component } from "react";
+import Router, { withRouter } from "next/router";
 
-let rendered = false;
-
-const getApplications = async (id) => {
-  console.log("Applications for ID: " + id);
-  const response = await $.ajax({
-    url:
-      "http://185.194.217.213:8085/api/application/getApplicationsForID/" + id,
-    method: "GET",
-    dataType: "json",
-    success: function (data) {
-      console.log(data);
-      renderTable(data);
-    },
-  });
-};
-
-const renderTable = (data) => {
-  if (!rendered) {
-    let root = document.getElementById("table_body");
-    data.forEach((element) =>
-      root.insertAdjacentHTML(
-        "beforebegin",
-        `
-          <tr>
-          <td>${element.id}</td>
-          <td>${element.job_id}</td>
-          <td>${element.company_id}</td>
-          </tr>
-          `
-      )
+class Profile extends Component {
+  static getInitialProps = async ({ query }) => {
+    const source = await fetch(
+      "http://185.194.217.213:8085/api/applications/getUserApplications/" + query.id
     );
-    //rendered = true;
-  }
-};
+    const data = await source.json();
+    console.log(data);
+    return { data: data };
+  };
 
-export default function Applications() {
-  const { data: session } = useSession();
-  const router = useRouter();
-  useEffect(() => {
-    if (session) {
-      getApplications(router.query.id);
-    }
-  });
+  render() {
+    const { data } = this.props;
 
-  if (!session) {
-    return <NoPerm />;
-  } else {
     return (
-      <div className="table-responsive">
-        <table className="table table-hover">
-          <thead className="table-dark">
-            <tr>
-              <th>ID</th>
-              <th>Job</th>
-              <th>Employer</th>
-            </tr>
-          </thead>
-          <tbody id="table_body"></tbody>
-        </table>
-      </div>
+      <Layout title="Applications">
+        {data.map(({ application_id, job_id, employer_id, status }) => (
+            <div>
+                <ApplicationCard key={id} id={id} job_id={job_id} employer={employer} status={status} />
+        </div>
+          ))}
+      </Layout>
     );
   }
 }
+
+export default withRouter(Profile);
