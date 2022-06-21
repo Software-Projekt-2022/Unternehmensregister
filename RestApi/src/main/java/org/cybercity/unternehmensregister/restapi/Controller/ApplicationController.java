@@ -43,14 +43,30 @@ public class ApplicationController {
 
     @GetMapping(path = "getAll", produces = "application/json")
     @ResponseBody
-    public List<Application> getJobs() {
-        return applicationService.getApplications();
+    public List<ResponseForm> getJobs() {
+        ArrayList<ResponseForm> res = new ArrayList<>();
+        for (Application application : applicationService.getApplications()) {
+            ResponseForm newRes = new ResponseForm();
+            newRes.setUser(userService.getUser(application.getApplicant_id()));
+            newRes.setCompany(companyService.getByID(application.getCompany_id()));
+            newRes.setJob(jobService.getJobByID(application.getJob_id()));
+            res.add(newRes);
+        }
+        return res;
     }
 
     @GetMapping(path = "getApplicationsForCompanyID/{id}", produces = "application/json")
     @ResponseBody
-    public List<Application> getApplicationsForCompanyID(@PathVariable long id) {
-        return applicationService.getApplicationsForCompanyID(id);
+    public List<ResponseForm> getApplicationsForCompanyID(@PathVariable long id) {
+        ArrayList<ResponseForm> res = new ArrayList<>();
+        for (Application application : applicationService.getApplicationsForCompanyID(id)) {
+            ResponseForm newRes = new ResponseForm();
+            newRes.setUser(userService.getUser(application.getApplicant_id()));
+            newRes.setCompany(companyService.getByID(application.getCompany_id()));
+            newRes.setJob(jobService.getJobByID(application.getJob_id()));
+            res.add(newRes);
+        }
+        return res;
     }
 
     @GetMapping(path = "getApplicationsForApplicantID/{id}", produces = "application/json")
