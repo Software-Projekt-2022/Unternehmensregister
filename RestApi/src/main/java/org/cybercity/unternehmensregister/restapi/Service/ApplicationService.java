@@ -22,8 +22,12 @@ public class ApplicationService {
         return applicationRepository.findAll();
     }
 
-    public List<Application> getApplicationsForID(long id) {
-        return applicationRepository.getApplicationsForID((int) id);
+    public List<Application> getApplicationsForCompanyID(long id) {
+        return applicationRepository.getApplicationsForCompanyID((int) id);
+    }
+
+    public List<Application> getApplicationsForApplicantID(long id) {
+        return applicationRepository.getApplicationsForApplicantID((int) id);
     }
 
     public Application newApplication(Application newApplication) {
