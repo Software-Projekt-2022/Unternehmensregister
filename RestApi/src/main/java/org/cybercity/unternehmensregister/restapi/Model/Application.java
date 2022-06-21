@@ -30,4 +30,7 @@ public class Application {
     @Column(name = "employer_id")
     @NotNull
     private int company_id;
+
+    @Column(name = "text")
+    private String text;
 }

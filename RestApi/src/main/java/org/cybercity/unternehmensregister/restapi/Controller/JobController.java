@@ -27,7 +27,7 @@ public class JobController {
 
     @GetMapping(path = "getJobByID/{id}", produces = "application/json")
     @ResponseBody
-    public Job getJobByID(@PathVariable long id) {
+    public Job getJobByID(@PathVariable int id) {
         return jobService.getJobByID(id);
     }
 

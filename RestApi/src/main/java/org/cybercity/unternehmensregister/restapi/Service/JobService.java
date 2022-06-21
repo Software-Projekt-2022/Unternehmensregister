@@ -2,11 +2,13 @@ package org.cybercity.unternehmensregister.restapi.Service;
 
 import lombok.RequiredArgsConstructor;
 import org.cybercity.unternehmensregister.restapi.Model.Job;
+import org.cybercity.unternehmensregister.restapi.Model.User;
 import org.cybercity.unternehmensregister.restapi.Repositories.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Clemens
@@ -21,8 +23,9 @@ public class JobService {
         return jobRepository.findAll();
     }
 
-    public Job getJobByID(long id) {
-        return jobRepository.getById((int)id);
+    public Job getJobByID(int id) {
+        Optional<Job> tmp = jobRepository.findById(id);
+        return tmp.orElse(null);
     }
 
     public Job newJob(Job newJob) {

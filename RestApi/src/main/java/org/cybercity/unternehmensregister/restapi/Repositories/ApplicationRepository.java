@@ -10,6 +10,9 @@ import java.util.List;
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
 
     @Query(value = "SELECT a FROM Application a WHERE a.company_id = :employer_id")
-    List<Application> getApplicationsForID(int employer_id);
+    List<Application> getApplicationsForCompanyID(int employer_id);
+
+    @Query(value = "SELECT a FROM Application a WHERE a.applicant_id = :applicant_id")
+    List<Application> getApplicationsForApplicantID(int applicant_id);
 
 }
