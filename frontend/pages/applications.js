@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
 import _error from "./_error";
 import { Component } from "react";
-import Router, { withRouter } from "next/router";
+import { withRouter } from "next/router";
 import Protected from "../components/Protected";
 import ApplicationListing from "../components/ApplicationListing";
 
-class Profile extends Component {
+class Applications extends Component {
   static getInitialProps = async ({ query }) => {
     const source = await fetch(
       "http://185.194.217.213:8085/api/application/getApplicationsForApplicantID/" +
@@ -47,4 +47,4 @@ class Profile extends Component {
   }
 }
 
-export default withRouter(Profile);
+export default withRouter(Applications);

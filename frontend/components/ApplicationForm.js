@@ -1,6 +1,21 @@
-export default function ApplicationForm(props) {
+import $ from 'jquery';
 
-  console.log(props)
+export default function ApplicationForm(props) {
+  const sendData = async () => {
+    $.ajax({
+      type: "POST",
+      url: "http://185.194.217.213:8085/api/application/newApplications",
+      data: {
+        "applicant_id": 1,
+        "job_id": props.job_id,
+        "company_id": props.emp_id,
+        "text": "string",
+      },
+      success: function () {},
+      dataType: "json",
+      contentType: "application/json",
+    });
+  };
 
   return (
     <>
@@ -8,61 +23,15 @@ export default function ApplicationForm(props) {
         <section id="contact" className="gray-bg padding-top-bottom">
           <div className="container bootstrap snippets bootdey">
             <div className="row">
-              <h1>{props.job_name}</h1>
-              <form
-                id="Highlighted-form"
-                className="col-sm-6 col-sm-offset-3"
-                action="contact.php"
-                method="post"
-                noValidate=""
-              >
+              <h1>Bewerbung: {props.name}</h1>
+              <form className="col-sm-6 col-sm-offset-3">             
                 <div className="form-group">
-                  <label className="control-label" htmlFor="contact-name">
-                    Name
-                  </label>
-                  <div className="controls">
-                    <input
-                      id="contact-name"
-                      name="contactName"
-                      placeholder="Dein Name"
-                      className="form-control requiredField Highlighted-label"
-                      data-new-placeholder="Your name"
-                      type="text"
-                      data-error-empty="Please enter your name"
-                    />
-                    <i className="fa fa-user"></i>
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label className="control-label" htmlFor="contact-mail">
-                    Email
-                  </label>
-                  <div className=" controls">
-                    <input
-                      id="contact-mail"
-                      name="email"
-                      placeholder="Deine Email"
-                      className="form-control requiredField Highlighted-label"
-                      data-new-placeholder="Deine Email"
-                      type="email"
-                      data-error-empty="Please enter your email"
-                      data-error-invalid="Invalid email address"
-                    />
-                    <i className="fa fa-envelope"></i>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="control-label" htmlFor="contact-message">
-                    Message
-                  </label>
                   <div className="controls">
                     <textarea
                       id="contact-message"
                       name="comments"
                       placeholder="Dein Anschreiben"
                       className="form-control requiredField Highlighted-label"
-                      data-new-placeholder="Dein Anschreiben"
                       rows="6"
                       data-error-empty="Please enter your message"
                     ></textarea>
@@ -70,23 +39,10 @@ export default function ApplicationForm(props) {
                   </div>
                 </div>
                 <p>
-                  <button
-                    name="submit"
-                    type="submit"
-                    className="btn btn-info btn-block"
-                    data-error-message="Error!"
-                    data-sending-message="Sending..."
-                    data-ok-message="Message Sent"
-                  >
-                    <i className="fa fa-location-arrow"></i>Abschicken
+                  <button className="btn btn-info btn-block" onClick={sendData}>
+                    Abschicken
                   </button>
                 </p>
-                <input
-                  type="hidden"
-                  name="submitted"
-                  id="submitted"
-                  value="true"
-                />
               </form>
             </div>
           </div>

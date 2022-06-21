@@ -16,16 +16,22 @@ class Jobs extends Component {
     return (
       <Layout title="Jobs">
         <div className="caption v-middle text-center">
-        <section className="py-4 py-xl-5">
-                <div className="container h-100">
-          {JobArray.map(({ id, name, wageLower, wageUpper, employer }) => (
-            <div key={id}>
-                <JobListing id={id} name={name} wage_lower={wageLower} wage_upper={wageUpper} employer={employer} />
-        </div>
-          ))}
-          </div>
+          <section className="py-4 py-xl-5">
+            <div className="container h-100">
+              {JobArray.map(({ id, name, wageLower, wageUpper, employer }) => (
+                <div key={id}>
+                  <JobListing
+                    id={id}
+                    name={name}
+                    wageLower={wageLower}
+                    wageUpper={wageUpper}
+                    employer={employer}
+                  />
+                </div>
+              ))}
+            </div>
           </section>
-          </div>
+        </div>
       </Layout>
     );
   }

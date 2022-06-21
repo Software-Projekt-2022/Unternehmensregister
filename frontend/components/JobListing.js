@@ -12,7 +12,7 @@ export default function JobListing(props) {
               <div className="col-sm-3">
                 <h4 className="h5">{props.name}</h4>
                 <span className="badge bg-success fs-6">
-                  {props.wage_lower}€ - {props.wage_upper}€
+                  {props.wageLower}€ - {props.wageUpper}€
                 </span>
               </div>
               <div className="col-sm-1 py-2 fs-4">
