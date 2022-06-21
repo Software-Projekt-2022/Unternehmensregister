@@ -49,32 +49,24 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/jobs">
+                <Link as="Stellenmarkt" href="/jobs">
                   <a className="nav-link">Jobs</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/companies">
+                <Link as="Unternehmen" href="/companies">
                   <a className="nav-link">Unternehmen</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/profiles">
+                <Link as="Profile" href="/profiles">
                   <a className="nav-link">Profile</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  onClick={() => {
-                    router.push(
-                      { pathname: "/applications", query: { id: 1 } },
-                      "/applications"
-                    );
-                  }}
-                >
-                  Bewerbungen
-                </a>
+                <Link as="Bewerbungen" href="/applications">
+                  <a className="nav-link">Bewerbungen</a>
+                </Link>
               </li>
             </ul>
             <AuthButton />
@@ -125,7 +117,7 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/jobs">
+              <Link as="Stellenmarkt" href="/jobs">
                 <a className="nav-link">Jobs</a>
               </Link>
             </li>

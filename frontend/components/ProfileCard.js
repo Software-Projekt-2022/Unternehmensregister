@@ -18,7 +18,7 @@ export default function ProfileCard(props) {
           <p className="text-secondary mb-1">
             {props.status} bei {props.company}
           </p>
-          <Link href={{ pathname: "/profile", query: { id: props.id } }}>
+          <Link as="Profil" href={{ pathname: "/profile", query: { id: props.id } }}>
             <button className="btn btn-primary">Profil anzeigen</button>
           </Link>
         </div>

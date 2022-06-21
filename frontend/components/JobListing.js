@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function JobListing(props) {
   return (
@@ -24,9 +25,11 @@ export default function JobListing(props) {
                 <span className="badge bg-secondary m-1 px-1">Studiert</span>
               </div>
               <div className="col-sm-1 text-lg-end fs-2">
-                <a href="#" className="btn btn-warning stretched-link">
-                  Bewerben!
-                </a>
+                <Link as="Neue Bewerbung" href={{ pathname: "/manager", query: { job_id: props.id, emp_id: props.employer, job_name: props.name } }}>
+                  <button className="btn btn-warning stretched-link">
+                    Bewerben!
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

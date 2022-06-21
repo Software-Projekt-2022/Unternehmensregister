@@ -1,10 +1,14 @@
 export default function ApplicationForm(props) {
+
+  console.log(props)
+
   return (
     <>
       <div className="container bootstrap snippets bootdey">
         <section id="contact" className="gray-bg padding-top-bottom">
           <div className="container bootstrap snippets bootdey">
             <div className="row">
+              <h1>{props.job_name}</h1>
               <form
                 id="Highlighted-form"
                 className="col-sm-6 col-sm-offset-3"
@@ -20,7 +24,7 @@ export default function ApplicationForm(props) {
                     <input
                       id="contact-name"
                       name="contactName"
-                      placeholder="Your name"
+                      placeholder="Dein Name"
                       className="form-control requiredField Highlighted-label"
                       data-new-placeholder="Your name"
                       type="text"
@@ -38,9 +42,9 @@ export default function ApplicationForm(props) {
                     <input
                       id="contact-mail"
                       name="email"
-                      placeholder="Your email"
+                      placeholder="Deine Email"
                       className="form-control requiredField Highlighted-label"
-                      data-new-placeholder="Your email"
+                      data-new-placeholder="Deine Email"
                       type="email"
                       data-error-empty="Please enter your email"
                       data-error-invalid="Invalid email address"
@@ -56,9 +60,9 @@ export default function ApplicationForm(props) {
                     <textarea
                       id="contact-message"
                       name="comments"
-                      placeholder="Your message"
+                      placeholder="Dein Anschreiben"
                       className="form-control requiredField Highlighted-label"
-                      data-new-placeholder="Your message"
+                      data-new-placeholder="Dein Anschreiben"
                       rows="6"
                       data-error-empty="Please enter your message"
                     ></textarea>
@@ -74,7 +78,7 @@ export default function ApplicationForm(props) {
                     data-sending-message="Sending..."
                     data-ok-message="Message Sent"
                   >
-                    <i className="fa fa-location-arrow"></i>Send Message
+                    <i className="fa fa-location-arrow"></i>Abschicken
                   </button>
                 </p>
                 <input
