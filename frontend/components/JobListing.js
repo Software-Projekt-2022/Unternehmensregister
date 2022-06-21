@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 export default function JobListing(props) {
+
   return (
     <>
       <div className="card mb-3">
