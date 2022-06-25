@@ -16,15 +16,15 @@ export default NextAuth({
     CredentialsProvider({
       name: "CyberCity",
       credentials: {
-        username: {
-          label: "Username",
+        email: {
+          label: "Email",
           type: "text",
-          placeholder: "Nutzername",
+          placeholder: "Email",
         },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        const response = await fetch("http://auth.cyber-city.systems/login",
+        const response = await fetch("http://auth.cyber-city.systems/api/login",
           {
             method: "POST",
             body: JSON.stringify(credentials),
