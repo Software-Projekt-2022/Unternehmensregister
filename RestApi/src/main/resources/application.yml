@@ -19,5 +19,5 @@ spring.jpa:
   database-platform: org.hibernate.dialect.PostgreSQLDialect
 # Swagger
 springdoc.swagger-ui:
-  path: /docs.html
+  path: /docs
   operationsSorter: method
