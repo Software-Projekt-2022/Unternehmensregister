@@ -16,4 +16,4 @@ EXPOSE 80
 RUN mkdir /CyberJobs
 COPY --from=build /home/gradle/build/libs/*.jar /CyberJobs/app.jar
 RUN chmod +rwx /CyberJobs -R
-ENTRYPOINT ["java","-jar","/CyberJobs/app.jar", "--CJ_HOST=${HOST} --CJ_PORT=${PORT} --CJ_DB=${DB} --CJ_USER=${USER} --CJ_PW=${PW}"]
+ENTRYPOINT ["java","-jar","/CyberJobs/app.jar", "--CJ_HOST=${HOST}","--CJ_PORT=${PORT}","--CJ_DB=${DB}","--CJ_USER=${USER}","--CJ_PW=${PW}"]
