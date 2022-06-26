@@ -8,8 +8,6 @@ import Protected from "../components/Protected";
 
 class Profile extends Component {
   static getInitialProps = async ({ query }) => {
-    console.log("ID")
-    console.log(query.id)
     const profileQuery = await fetch(
       "http://localhost:8085/api/profile/getProfileByID/" + query.id
     );
@@ -18,9 +16,11 @@ class Profile extends Component {
     );
     const profileData = await profileQuery.json();
     const userData = await userQuery.json();
-    if (userData.user.company == null) {
+    console.log(userData)
+    if (userData.user.company_id == 0) {
+      console.log("KEINE FIRMA")
       userData.user.status = "Unbekanntes Arbeitsverhätnis";
-      userData.company = { name: "" };
+      userData.company = {name: ""}
     }
     return { profile: profileData, user: userData };
   };

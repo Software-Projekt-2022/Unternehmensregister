@@ -1,10 +1,11 @@
 import Layout from "../components/Layout";
 import JobListing from "../components/JobListing";
 import { Component } from "react";
+import { URL } from "./api/calls";
 
 class Jobs extends Component {
   static getInitialProps = async () => {
-    const query = await fetch("http://185.194.217.213:8085/api/job/getAll");
+    const query = await fetch(URL+"/api/job/getAll");
     const queryData = await query.json();
     console.log(queryData);
     return { JobArray: queryData };

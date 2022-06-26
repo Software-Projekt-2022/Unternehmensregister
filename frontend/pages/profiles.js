@@ -3,22 +3,23 @@ import ProfileCard from "../components/ProfileCard";
 import { Component } from "react";
 import { useSession } from "next-auth/react";
 import Protected from "../components/Protected";
+import URL from "../pages/api/calls";
 
 class Profiles extends Component {
   static getInitialProps = async () => {
-    const query = await fetch("http://185.194.217.213:8085/api/user/getAll");
+    const query = await fetch("http://localhost:8085/api/user/getAll");
     const queryData = await query.json();
     console.log(queryData);
-    return { profileArray: queryData };
+    return { userArray: queryData };
   };
 
   render() {
-    const { profileArray } = this.props;
+    const { userArray } = this.props;
 
     return (
       <Layout title="Profiles">
         <Protected>
-          {profileArray.map(({ id, age, forename, surname, status }) => (
+          {userArray.map(({ id, age, forename, surname, status }) => (
             <div key={id}>
               <ProfileCard
                 id={id}

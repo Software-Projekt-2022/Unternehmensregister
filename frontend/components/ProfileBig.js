@@ -1,5 +1,9 @@
 const ProfileBig = (props) => {
 
+
+  console.log("OK")
+  console.log(props)
+
   let text = ' bei '
   if (props.user.company.name == "") {
     text = ''
