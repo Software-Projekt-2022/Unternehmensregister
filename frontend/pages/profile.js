@@ -5,14 +5,15 @@ import ProfileBig from "../components/ProfileBig";
 import Router, { withRouter } from "next/router";
 import { useRouter } from "next/router";
 import Protected from "../components/Protected";
+import { URL } from "./api/calls";
 
 class Profile extends Component {
   static getInitialProps = async ({ query }) => {
     const profileQuery = await fetch(
-      "http://localhost:8085/api/profile/getProfileByID/" + query.id
+      URL+"/api/profile/getProfileByID/" + query.id
     );
     const userQuery = await fetch(
-      "http://localhost:8085/api/user/getUserByID/" + query.id
+      URL+"/api/user/getUserByID/" + query.id
     );
     const profileData = await profileQuery.json();
     const userData = await userQuery.json();
