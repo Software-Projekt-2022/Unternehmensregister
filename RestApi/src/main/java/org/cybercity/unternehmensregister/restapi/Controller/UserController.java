@@ -8,6 +8,7 @@ import org.cybercity.unternehmensregister.restapi.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ public class UserController {
     @ToString
     @NoArgsConstructor
     @AllArgsConstructor
-    class ReponseForm {
+    class ResponseForm {
         User user;
         Company company;
     }
@@ -34,14 +35,21 @@ public class UserController {
 
     @GetMapping(path = "getAll", produces = "application/json")
     @ResponseBody
-    public List<User> getUsers() {
-        return userService.getUsers();
+    public List<ResponseForm> getUsers() {
+        ArrayList<ResponseForm> res = new ArrayList<>();
+        for (User u : userService.getUsers()) {
+            ResponseForm newRes = new ResponseForm();
+            newRes.setUser(u);
+            newRes.setCompany(companyService.getByID(u.getCompany_id()));
+            res.add(newRes);
+        }
+        return res;
     }
 
     @GetMapping(path = "getUserByID/{id}", produces = "application/json")
     @ResponseBody
-    public ReponseForm getUser(@PathVariable long id) {
-        ReponseForm rf = new ReponseForm();
+    public ResponseForm getUser(@PathVariable long id) {
+        ResponseForm rf = new ResponseForm();
         rf.user = userService.getUser(id);
         if (rf.user.getCompany_id() != 0) {
             rf.company = companyService.getByID(rf.user.getCompany_id());
