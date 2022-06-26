@@ -117,7 +117,7 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link as="Stellenmarkt" href="/jobs">
+              <Link href="/jobs">
                 <a className="nav-link">Jobs</a>
               </Link>
             </li>
