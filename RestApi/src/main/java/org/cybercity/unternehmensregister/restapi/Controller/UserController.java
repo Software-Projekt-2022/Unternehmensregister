@@ -35,15 +35,8 @@ public class UserController {
 
     @GetMapping(path = "getAll", produces = "application/json")
     @ResponseBody
-    public List<ResponseForm> getUsers() {
-        ArrayList<ResponseForm> res = new ArrayList<>();
-        for (User u : userService.getUsers()) {
-            ResponseForm newRes = new ResponseForm();
-            newRes.setUser(u);
-            newRes.setCompany(companyService.getByID(u.getCompany_id()));
-            res.add(newRes);
-        }
-        return res;
+    public List<User> getUsers() {
+        return userService.getUsers();
     }
 
     @GetMapping(path = "getUserByID/{id}", produces = "application/json")
