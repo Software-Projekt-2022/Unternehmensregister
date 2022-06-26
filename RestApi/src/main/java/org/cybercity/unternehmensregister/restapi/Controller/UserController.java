@@ -1,11 +1,14 @@
 package org.cybercity.unternehmensregister.restapi.Controller;
 
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import org.cybercity.unternehmensregister.restapi.Model.Company;
 import org.cybercity.unternehmensregister.restapi.Model.User;
+import org.cybercity.unternehmensregister.restapi.Service.CompanyService;
 import org.cybercity.unternehmensregister.restapi.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +20,18 @@ import java.util.List;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserController {
 
+    @Getter
+    @Setter
+    @Data
+    @ToString
+    @NoArgsConstructor
+    @AllArgsConstructor
+    class ResponseForm {
+        User user;
+        Company company;
+    }
     private final UserService userService;
+    private final CompanyService companyService;
 
     @GetMapping(path = "getAll", produces = "application/json")
     @ResponseBody
@@ -27,8 +41,13 @@ public class UserController {
 
     @GetMapping(path = "getUserByID/{id}", produces = "application/json")
     @ResponseBody
-    public User getUser(@PathVariable long id) {
-        return userService.getUser(id);
+    public ResponseForm getUser(@PathVariable long id) {
+        ResponseForm rf = new ResponseForm();
+        rf.user = userService.getUser(id);
+        if (rf.user.getCompany_id() != 0) {
+            rf.company = companyService.getByID(rf.user.getCompany_id());
+        }
+        return rf;
     }
 
     @PostMapping(path = "newUser", consumes = "application/json", produces = "application/json")

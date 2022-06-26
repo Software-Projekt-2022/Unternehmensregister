@@ -49,22 +49,22 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link as="Stellenmarkt" href="/jobs">
+                <Link href="/jobs">
                   <a className="nav-link">Jobs</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link as="Unternehmen" href="/companies">
+                <Link href="/companies">
                   <a className="nav-link">Unternehmen</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link as="Profile" href="/profiles">
+                <Link href="/profiles">
                   <a className="nav-link">Profile</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link as="Bewerbungen" href={{ pathname: "/applications", query: { id: 1 } }}>
+                <Link href={{ pathname: "/applications", query: { id: session.user.token.content.account_id } }}>
                   <a className="nav-link">Bewerbungen</a>
                 </Link>
               </li>
@@ -117,7 +117,7 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link as="Stellenmarkt" href="/jobs">
+              <Link href="/jobs">
                 <a className="nav-link">Jobs</a>
               </Link>
             </li>

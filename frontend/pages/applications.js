@@ -4,11 +4,12 @@ import { Component } from "react";
 import { withRouter } from "next/router";
 import Protected from "../components/Protected";
 import ApplicationListing from "../components/ApplicationListing";
+import { URL } from "./api/calls";
 
 class Applications extends Component {
   static getInitialProps = async ({ query }) => {
     const source = await fetch(
-      "http://185.194.217.213:8085/api/application/getApplicationsForApplicantID/" +
+      URL+"/api/application/getApplicationsForApplicantID/" +
         query.id
     );
     const data = await source.json();

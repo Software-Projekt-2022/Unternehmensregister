@@ -5,32 +5,34 @@ import ProfileBig from "../components/ProfileBig";
 import Router, { withRouter } from "next/router";
 import { useRouter } from "next/router";
 import Protected from "../components/Protected";
+import { URL } from "./api/calls";
 
 class Profile extends Component {
   static getInitialProps = async ({ query }) => {
     const profileQuery = await fetch(
-      "http://185.194.217.213:8085/api/profile/getProfileByID/" + query.id
+      URL+"/api/profile/getProfileByID/" + query.id
     );
     const userQuery = await fetch(
-      "http://185.194.217.213:8085/api/user/getUserByID/" + query.id
-    );
-    const companyQuery = await fetch(
-      "http://185.194.217.213:8085/api/company/getByID/" + query.id
+      URL+"/api/user/getUserByID/" + query.id
     );
     const profileData = await profileQuery.json();
     const userData = await userQuery.json();
-    const companyData = await companyQuery.json();
-    console.log(companyData);
-    return { profile: profileData, user: userData, company: companyData };
+    console.log(userData)
+    if (userData.user.company_id == 0) {
+      console.log("KEINE FIRMA")
+      userData.user.status = "Unbekanntes Arbeitsverhätnis";
+      userData.company = {name: ""}
+    }
+    return { profile: profileData, user: userData };
   };
 
   render() {
-    const { profile, user, company } = this.props;
+    const { profile, user } = this.props;
 
     return (
       <Layout title="Profile">
         <Protected>
-          <ProfileBig user={user} profile={profile} company={company} />
+          <ProfileBig user={user} profile={profile} />
         </Protected>
       </Layout>
     );
