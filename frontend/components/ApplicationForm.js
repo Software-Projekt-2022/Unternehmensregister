@@ -1,7 +1,10 @@
 import $ from 'jquery';
 import { sendApplication } from '../pages/api/calls';
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function ApplicationForm(props) {
+
+  const { data: session } = useSession()
 
   return (
     <>
@@ -23,7 +26,7 @@ export default function ApplicationForm(props) {
                   </div>
                 </div>
                 <p>
-                  <button className="btn btn-info btn-block" onClick={() => {sendApplication(props.job_id, props.emp_id, 1, $("#textmsg").val())}}>
+                  <button className="btn btn-info btn-block" onClick={() => {sendApplication(props.job_id, props.emp_id, session.user.token.content.account_id , $("#textmsg").val())}}>
                     Abschicken
                   </button>
                 </p>

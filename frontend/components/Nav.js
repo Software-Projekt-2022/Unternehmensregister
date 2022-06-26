@@ -64,7 +64,7 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link as="Bewerbungen" href={{ pathname: "/applications", query: { id: 1 } }}>
+                <Link as="Bewerbungen" href={{ pathname: "/applications", query: { id: session.user.token.content.account_id } }}>
                   <a className="nav-link">Bewerbungen</a>
                 </Link>
               </li>
