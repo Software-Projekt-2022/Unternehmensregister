@@ -18,7 +18,6 @@ const Layout = ({ children, title }) => (
     <Head>
       <title>CyberJobs - {title}</title>
       <meta name="description" content="Job hub for CyberCity" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
     </Head>
     <header>
       <Nav />

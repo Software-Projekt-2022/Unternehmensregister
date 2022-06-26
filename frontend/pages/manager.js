@@ -16,7 +16,7 @@ class Manager extends Component {
     return (
       <Layout title="Bewerbung">
         <Protected>
-          <ApplicationForm job_id={data.job_id} emp_id={data.emp_id} job_name={data.name} />
+          <ApplicationForm job_id={data.job_id} emp_id={data.emp_id} name={data.name} />
         </Protected>
       </Layout>
     );
