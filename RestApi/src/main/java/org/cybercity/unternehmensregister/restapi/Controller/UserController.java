@@ -97,4 +97,10 @@ public class UserController {
         userService.setImage(id, newImage);
     }
 
+    @ResponseBody
+    @PostMapping(path = "updateUser/{id}")
+    public void updateUser(@PathVariable long id, @RequestBody User user) {
+        userService.updateUser(id, user);
+    }
+
 }

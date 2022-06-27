@@ -77,4 +77,10 @@ public class UserService {
         obj.setImage(newImage);
         userRepository.save(obj);
     }
+
+    public void updateUser(long id, User user) {
+        User tmp = getUser(id);
+        tmp = user;
+        userRepository.save(tmp);
+    }
 }
