@@ -7,7 +7,7 @@ import URL from "../pages/api/calls";
 
 class Profiles extends Component {
   static getInitialProps = async () => {
-    const query = await fetch(URL+"/api/user/getAll");
+    const query = await fetch("http://185.194.217.213:8080/api/user/getAll");
     const queryData = await query.json();
     console.log(queryData);
     return { userArray: queryData };
@@ -19,7 +19,7 @@ class Profiles extends Component {
     return (
       <Layout title="Profiles">
         <Protected>
-          {userArray.map(({ id, age, forename, surname, status }) => (
+          {userArray.map(({ id, age, forename, surname, status, image }) => (
             <div key={id}>
               <ProfileCard
                 id={id}
@@ -27,6 +27,7 @@ class Profiles extends Component {
                 forename={forename}
                 surname={surname}
                 status={status}
+                image={image}
               />
             </div>
           ))}

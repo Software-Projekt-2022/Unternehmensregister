@@ -1,6 +1,10 @@
 package org.cybercity.unternehmensregister.restapi.Service;
 
 import lombok.RequiredArgsConstructor;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import net.minidev.json.parser.ParseException;
+import nonapi.io.github.classgraph.json.JSONSerializer;
 import org.cybercity.unternehmensregister.restapi.Model.Profile;
 import org.cybercity.unternehmensregister.restapi.Repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +22,9 @@ public class ProfileService {
 
     private final ProfileRepository profileRepository;
 
-    public Profile newProfile(Profile Profile) {
-        profileRepository.save(Profile);
-        return Profile;
+    public Profile newProfile(Profile profile) {
+        profileRepository.save(profile);
+        return profile;
     }
 
     public List<Profile> getProfiles() {

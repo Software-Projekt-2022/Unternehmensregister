@@ -39,8 +39,10 @@ public class User {
     @Column(name = "company_id")
     private int company_id;
 
-    @NotNull
     @Column(name = "status")
     private String status;
+
+    @Column(name = "image")
+    private String image;
 
 }

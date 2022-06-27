@@ -91,4 +91,16 @@ public class UserController {
         userService.setStatus(id, newStatus);
     }
 
+    @ResponseBody
+    @PostMapping(path = "setImage/{id}")
+    public void setImage(@PathVariable long id, @RequestParam String newImage) {
+        userService.setImage(id, newImage);
+    }
+
+    @ResponseBody
+    @PostMapping(path = "updateUser/{id}")
+    public void updateUser(@PathVariable long id, @RequestBody User user) {
+        userService.updateUser(id, user);
+    }
+
 }

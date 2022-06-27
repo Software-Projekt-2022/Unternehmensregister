@@ -1,7 +1,9 @@
 package org.cybercity.unternehmensregister.restapi.Service;
 
 import lombok.RequiredArgsConstructor;
+import org.cybercity.unternehmensregister.restapi.Model.Profile;
 import org.cybercity.unternehmensregister.restapi.Model.User;
+import org.cybercity.unternehmensregister.restapi.Repositories.ProfileRepository;
 import org.cybercity.unternehmensregister.restapi.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +19,11 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final ProfileService profileService;
 
     public User newUser(User user) {
         userRepository.save(user);
+        profileService.newProfile(new Profile((int)user.getId(), "", ""));
         return user;
     }
 
@@ -66,5 +70,17 @@ public class UserService {
         User obj = userRepository.getById(id);
         obj.setStatus(newStatus);
         userRepository.save(obj);
+    }
+
+    public void setImage(long id, String newImage) {
+        User obj = userRepository.getById(id);
+        obj.setImage(newImage);
+        userRepository.save(obj);
+    }
+
+    public void updateUser(long id, User user) {
+        User tmp = getUser(id);
+        tmp = user;
+        userRepository.save(tmp);
     }
 }

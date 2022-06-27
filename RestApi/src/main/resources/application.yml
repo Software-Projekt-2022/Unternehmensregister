@@ -4,7 +4,7 @@ app:
   description: Restful backend for the CyberJobs website
 # Server settings
 server:
-  port: 8085
+  port: 8080
   address: 0.0.0.0
 # Database
 spring.datasource:
@@ -19,5 +19,9 @@ spring.jpa:
   database-platform: org.hibernate.dialect.PostgreSQLDialect
 # Swagger
 springdoc.swagger-ui:
-  path: /docs.html
+  path: /docs
   operationsSorter: method
+# RabbitMQ
+spring:
+  rabbitmq:
+    addresses: rabbitmq:5672
