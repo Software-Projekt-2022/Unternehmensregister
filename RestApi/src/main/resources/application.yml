@@ -19,7 +19,7 @@ spring.jpa:
   database-platform: org.hibernate.dialect.PostgreSQLDialect
 # Swagger
 springdoc.swagger-ui:
-  path: /docs
+  path: /api/docs
   operationsSorter: method
 # RabbitMQ
 spring:
