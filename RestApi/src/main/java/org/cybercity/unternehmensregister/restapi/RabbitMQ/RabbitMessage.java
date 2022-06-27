@@ -12,8 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 public class RabbitMessage {
-    private String messageId;
-    private String message;
-    private Date messageDate;
+    private String event_type;
+    private String content;
 
 }
