@@ -21,3 +21,7 @@ spring.jpa:
 springdoc.swagger-ui:
   path: /docs
   operationsSorter: method
+# RabbitMQ
+spring:
+  rabbitmq:
+    addresses: rabbitmq:5672
