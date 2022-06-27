@@ -1,14 +1,14 @@
 # Unternehmensregister
 
-[Author](https://github.com/DubskySteam) <> [Website](http://185.194.217.213:3000) <> [API Documentation](http://185.194.217.213:8085/swagger-ui/index.html) <> [Docker HUB](https://hub.docker.com/r/dubskysteam/cyberjobs)
+[Author](https://github.com/DubskySteam) <> [Website](https://unternehmensregister.cyber-city.systems/) <> [API Documentation](http://185.194.217.213:8085/swagger-ui/index.html) <> [Docker HUB](https://hub.docker.com/r/dubskysteam/cyberjobs)
 
 ### Frontend
-![](https://img.shields.io/badge/Website-1.6-green?style=for-the-badge&logo=next.js)
+![](https://img.shields.io/badge/Website-3.1-green?style=for-the-badge&logo=next.js)
 ![](https://img.shields.io/badge/Desktop-Unclear-red?style=for-the-badge&logo=compose)
 
 ### Backend
-![](https://img.shields.io/badge/Database-1.6-green?style=for-the-badge&logo=postgresql)
-![](https://img.shields.io/badge/Rest%20API-1.4-green?style=for-the-badge&logo=Spring)
+![](https://img.shields.io/badge/Database-2.1-green?style=for-the-badge&logo=postgresql)
+![](https://img.shields.io/badge/Rest%20API-3.0-green?style=for-the-badge&logo=Spring)
 
 ### Technologies
 ![](https://img.shields.io/badge/Database-PostgreSQL-blue?style=for-the-badge&logo=mysql)

@@ -1,3 +1,6 @@
+import $ from "jquery";
+import { sendProfileUpdate } from "../pages/api/calls";
+
 const EditProfile = (props) => {
     let img = props.udata.user.image;
   if (img == null) {
@@ -29,16 +32,18 @@ const EditProfile = (props) => {
                 <input
                   type="text"
                   className="form-control"
+                  id="forename"
                   placeholder="Vorname"
-                  value=""
+                  defaultValue={props.udata.user.forename}
                 />
               </div>
               <div className="col-md-6">
                 <label className="labels">Nachname</label>
                 <input
                   type="text"
+                  id="surname"
                   className="form-control"
-                  value=""
+                  defaultValue={props.udata.user.surname}
                   placeholder="Nachname"
                 />
               </div>
@@ -48,99 +53,59 @@ const EditProfile = (props) => {
                 <label className="labels">E-Mail</label>
                 <input
                   type="email"
+                  id="email"
                   className="form-control"
                   placeholder="E-Mail Adresse"
-                  value=""
+                  defaultValue={props.udata.user.email}
                 />
               </div>
-              <div className="col-md-12">
-                <label className="labels">Nationalität</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Deutsch, Englisch, Französisch, Italienisch"
-                  value=""
-                />
-              </div>
+              <br />
               <div className="col-md-12">
                 <label className="labels">Profilbild</label>
                 <input
                   type="text"
+                  id="image"
                   className="form-control"
                   placeholder="https://www.example.com/image.jpg"
-                  value=""
+                  defaultValue={img}
                 />
               </div>
+              <br />
               <div className="col-md-12">
-                <label className="labels">Postcode</label>
+                <label className="labels">Alter</label>
                 <input
                   type="text"
+                  id="age"
                   className="form-control"
-                  placeholder="enter address line 2"
-                  value=""
-                />
-              </div>
-              <div className="col-md-12">
-                <label className="labels">State</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="enter address line 2"
-                  value=""
-                />
-              </div>
-              <div className="col-md-12">
-                <label className="labels">Area</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="enter address line 2"
-                  value=""
-                />
-              </div>
-              <div className="col-md-12">
-                <label className="labels">Email ID</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="enter email id"
-                  value=""
-                />
-              </div>
-              <div className="col-md-12">
-                <label className="labels">Education</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="education"
-                  value=""
+                  placeholder="20"
+                  defaultValue={props.udata.user.age}
                 />
               </div>
             </div>
             <div className="row mt-3">
               <div className="col-md-6">
-                <label className="labels">Country</label>
+              <label className="labels">Nationalität</label>
                 <input
                   type="text"
+                  id="nationality"
                   className="form-control"
-                  placeholder="country"
-                  value=""
+                  placeholder="Deutsch, Englisch"
                 />
               </div>
               <div className="col-md-6">
-                <label className="labels">State/Region</label>
+                <label className="labels">Region</label>
                 <input
                   type="text"
+                  id="region"
                   className="form-control"
-                  value=""
-                  placeholder="state"
+                  placeholder="Niederachsen, NRW"
                 />
               </div>
             </div>
             <div className="mt-5 text-center">
-              <button className="btn btn-primary profile-button" type="button">
-                Save Profile
-              </button>
+            <button className="btn btn-info btn-block" onClick={() => {sendProfileUpdate(props.udata.user.id, $("#forename").val(), $("#surname").val() , $("#age").val(), $("#email").val(), $("#companyid").val(), $("#status").val(), $("#image").val())}}>
+                    Abschicken
+                  </button>
             </div>
           </div>
         </div>
@@ -154,9 +119,9 @@ const EditProfile = (props) => {
               <label className="labels">Über mich</label>
               <input
                 type="text"
+                id="aboutme"
                 className="form-control"
                 placeholder="Was sollen andere über sie wissen?"
-                value=""
               />
             </div>{" "}
             <br />
@@ -164,9 +129,9 @@ const EditProfile = (props) => {
               <label className="labels">Zertifikate</label>
               <input
                 type="text"
+                id="certs"
                 className="form-control"
                 placeholder="Oracle Java11, C++ Google 2"
-                value=""
               />
             </div>
             <br />
@@ -174,9 +139,21 @@ const EditProfile = (props) => {
               <label className="labels">Arbeitsstatus</label>
               <input
                 type="text"
+                id="status"
                 className="form-control"
                 placeholder="Suchend, Freelancer"
-                value=""
+                defaultValue={props.udata.user.status}
+              />
+            </div>
+            <br />
+            <div className="col-md-12">
+              <label className="labels">Unternehmen</label>
+              <input
+                type="text"
+                id="companyid"
+                className="form-control"
+                placeholder="Unternehmens ID"
+                defaultValue={props.udata.user.company_id}
               />
             </div>
           </div>

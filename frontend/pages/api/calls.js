@@ -18,26 +18,25 @@ export const sendApplication = async (job_id, emp_id, applicant_id, text) => {
         'Content-Type': 'application/json'
       }
     });
-    const success = await res.json();
-    console.log(success)
   }
 
-export const sendProfileUpdate = async (job_id, emp_id, applicant_id, text) => {
-  console.log(job_id, emp_id, applicant_id, text)
-  const res = await fetch(URL+'/api/application/newApplication', {
+export const sendProfileUpdate = async (id, forename, surname, age, email, company_id, status, image) => {
+  const res = await fetch(URL+'/api/user/updateUser/' + id, {
       method: 'POST',
       body: JSON.stringify({
-          "applicant_id": applicant_id,
-          "job_id": job_id,
-          "company_id": emp_id,
-          "text": text
+          "id": id,
+          "forename": forename,
+          "surname": surname,
+          "age": age,
+          "email": email,
+          "company_id": company_id,
+          "status": status,
+          "image": image
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-    const success = await res.json();
-    console.log(success)
   }
 
 const handler = nc()
