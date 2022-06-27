@@ -7,7 +7,7 @@ import URL from "../pages/api/calls";
 
 class Profiles extends Component {
   static getInitialProps = async () => {
-    const query = await fetch(URL+"/api/user/getAll");
+    const query = await fetch("http://localhost:8085/api/user/getAll");
     const queryData = await query.json();
     console.log(queryData);
     return { userArray: queryData };
