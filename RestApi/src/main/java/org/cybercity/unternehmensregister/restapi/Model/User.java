@@ -42,4 +42,7 @@ public class User {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "image")
+    private String image;
+
 }

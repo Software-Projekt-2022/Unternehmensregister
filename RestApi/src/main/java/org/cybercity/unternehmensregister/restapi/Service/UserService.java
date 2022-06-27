@@ -71,4 +71,10 @@ public class UserService {
         obj.setStatus(newStatus);
         userRepository.save(obj);
     }
+
+    public void setImage(long id, String newImage) {
+        User obj = userRepository.getById(id);
+        obj.setImage(newImage);
+        userRepository.save(obj);
+    }
 }
