@@ -2,7 +2,7 @@ import $ from "jquery";
 import nc from "next-connect";
 import cors from "cors";
 
-export const URL = "https://unternehmensregisterba.cyber-city.systems/api/"
+export const URL = "https://unternehmensregisterba.cyber-city.systems/"
 
 export const sendApplication = async (job_id, emp_id, applicant_id, text) => {
   console.log(job_id, emp_id, applicant_id, text)
