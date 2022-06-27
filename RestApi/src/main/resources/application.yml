@@ -6,6 +6,7 @@ app:
 server:
   port: 8080
   address: 0.0.0.0
+  forward-headers-strategy: framework
 # Database
 spring.datasource:
   url: jdbc:postgresql://${CJ_HOST}:${CJ_PORT}/${CJ_DB}
