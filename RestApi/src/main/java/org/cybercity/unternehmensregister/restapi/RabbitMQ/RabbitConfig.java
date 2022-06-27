@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
 
-    public static final String QUEUE = "message_queue";
-    public static final String EXCHANGE = "message_exchange";
-    public static final String ROUTING_KEY = "message_routingKey";
+    public static final String QUEUE = "microservice.unternehmensregister";
+    public static final String EXCHANGE = "publish_event.unternehmensregister";
+    public static final String ROUTING_KEY = "";
 
     @Bean
     public Queue queue() {
