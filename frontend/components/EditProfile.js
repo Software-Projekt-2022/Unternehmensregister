@@ -1,4 +1,8 @@
 const EditProfile = (props) => {
+    let img = props.udata.user.image;
+  if (img == null) {
+    img = "https://img.icons8.com/ultraviolet/344/test-account.png"
+  }
   return (
     <div className="container rounded bg-white mt-5 mb-5">
       <div className="row">
@@ -7,7 +11,7 @@ const EditProfile = (props) => {
             <img
               className="rounded-circle mt-5"
               width="150px"
-              src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+              src={img}
             />
             <span className="font-weight-bold">{props.udata.user.forename}</span>
             <span className="text-black-50">{props.udata.user.email}</span>
@@ -54,16 +58,16 @@ const EditProfile = (props) => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Nationalität"
+                  placeholder="Deutsch, Englisch, Französisch, Italienisch"
                   value=""
                 />
               </div>
               <div className="col-md-12">
-                <label className="labels">Address Line 2</label>
+                <label className="labels">Profilbild</label>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="enter address line 2"
+                  placeholder="https://www.example.com/image.jpg"
                   value=""
                 />
               </div>

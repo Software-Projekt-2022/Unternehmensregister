@@ -4,6 +4,10 @@ const ProfileBig = (props) => {
   console.log("OK")
   console.log(props)
 
+  let img = props.user.user.image;
+  if (img == null) {
+    img = "https://img.icons8.com/ultraviolet/344/test-account.png"
+  }
   let text = ' bei '
   if (props.user.company.name == "") {
     text = ''
@@ -13,7 +17,7 @@ const ProfileBig = (props) => {
     <div className="card-body">
       <div className="d-flex flex-column align-items-center text-center">
         <img
-          src="https://avatars.githubusercontent.com/u/23001099?v=4"
+          src={img}
           alt="Profile Image"
           className="rounded-circle"
           width="150"
