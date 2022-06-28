@@ -44,7 +44,7 @@ public class CompanyService {
     }
 
     public List<Company> getByCeoId(long id) {
-        return companyRepository.findByCeoId(id);
+        return companyRepository.findByCeoId((int)id);
     }
 
     public void setName(@RequestParam long id, @RequestParam String newName) {

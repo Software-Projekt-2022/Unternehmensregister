@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import net.minidev.json.JSONObject;
 
 import java.util.Date;
 
@@ -20,5 +19,4 @@ public class RabbitMessage {
     private Date event_time;
     @JsonProperty("content")
     private String content;
-
 }

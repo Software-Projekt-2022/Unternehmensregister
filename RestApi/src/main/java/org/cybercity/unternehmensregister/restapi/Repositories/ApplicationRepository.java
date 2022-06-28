@@ -15,4 +15,5 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
     @Query(value = "SELECT a FROM Application a WHERE a.applicant_id = :applicant_id")
     List<Application> getApplicationsForApplicantID(int applicant_id);
 
+
 }

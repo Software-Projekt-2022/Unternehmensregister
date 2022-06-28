@@ -39,5 +39,4 @@ public class ApplicationService {
         Application obj = applicationRepository.getById(id);
         applicationRepository.delete(obj);
     }
-
 }
