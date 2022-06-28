@@ -9,8 +9,7 @@ import { URL } from "./api/calls";
 class ApplicationManager extends Component {
   static getInitialProps = async ({ query }) => {
     const source = await fetch(
-      "http://localhost:8080/api/application/getApplicationsForCeoID/" +
-        query.id
+      URL + "/api/application/getApplicationsForCeoID/" + query.id
     );
     const data = await source.json();
     return { data: data };
@@ -25,20 +24,20 @@ class ApplicationManager extends Component {
           <div className="caption v-middle text-center">
             <section className="py-4 py-xl-5">
               <div className="container h-100">
-                {data.map(
-                  ({ user, company, job }) => (
-                    <div key={job.id}>
-                      <ApplicationCeoListing
-                        name={job.name}
-                        applicant_id={user.id}
-                        forename={user.forename}
-                        surname={user.surname}
-                        CompName={company.name}
-                        CompShort={company.abbrevation}
-                      />
-                    </div>
-                  )
-                )}
+                {data.map(({ user, company, job, application }) => (
+                  <div key={job.id}>
+                    <ApplicationCeoListing
+                      name={job.name}
+                      applicant_id={user.id}
+                      forename={user.forename}
+                      surname={user.surname}
+                      CompName={company.name}
+                      CompShort={company.abbrevation}
+                      text={application.text}
+                      appID={application.id}
+                    />
+                  </div>
+                ))}
               </div>
             </section>
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { deleteApplication } from "../pages/api/calls";
 
 const ApplicationCeoListing = (props) => {
   return (
@@ -12,11 +13,21 @@ const ApplicationCeoListing = (props) => {
                 {props.CompName} ({props.CompShort})
               </span>
             </div>
-            <div className="col-sm-2 fs-2">
+            <div className="row-sm-2 fs-2">
               <button className="btn btn-primary">
                 {props.forename} {props.surname}
               </button>{" "}
+              <button
+                className="btn btn-danger"
+                onClick={() => {
+                  deleteApplication(props.appID);
+                }}
+              >
+                Löschen
+              </button>{" "}
             </div>
+            <hr />
+            <p>{props.text}</p>
           </div>
         </div>
       </div>

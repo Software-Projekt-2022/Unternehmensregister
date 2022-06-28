@@ -34,6 +34,7 @@ public class ApplicationController {
         User user;
         Company company;
         Job job;
+        Application application;
     }
 
     private final ApplicationService applicationService;
@@ -50,6 +51,7 @@ public class ApplicationController {
             newRes.setUser(userService.getUser(application.getApplicant_id()));
             newRes.setCompany(companyService.getByID(application.getCompany_id()));
             newRes.setJob(jobService.getJobByID(application.getJob_id()));
+            newRes.setApplication(application);
             res.add(newRes);
         }
         return res;
@@ -64,6 +66,7 @@ public class ApplicationController {
             newRes.setUser(userService.getUser(application.getApplicant_id()));
             newRes.setCompany(companyService.getByID(application.getCompany_id()));
             newRes.setJob(jobService.getJobByID(application.getJob_id()));
+            newRes.setApplication(application);
             res.add(newRes);
         }
         return res;
@@ -80,6 +83,7 @@ public class ApplicationController {
                 newRes.setUser(userService.getUser(application.getApplicant_id()));
                 newRes.setCompany(companyService.getByID(application.getCompany_id()));
                 newRes.setJob(jobService.getJobByID(application.getJob_id()));
+                newRes.setApplication(application);
                 res.add(newRes);
             }
         }
