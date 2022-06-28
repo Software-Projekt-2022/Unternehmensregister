@@ -9,7 +9,6 @@ class Profiles extends Component {
   static getInitialProps = async () => {
     const query = await fetch("https://unternehmensregisterba.cyber-city.systems/api/user/getAll");
     const queryData = await query.json();
-    console.log(queryData);
     return { userArray: queryData };
   };
 

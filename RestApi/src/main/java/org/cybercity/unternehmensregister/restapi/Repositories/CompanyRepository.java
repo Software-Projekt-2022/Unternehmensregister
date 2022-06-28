@@ -18,7 +18,7 @@ public interface CompanyRepository extends JpaRepository<Company, Long> {
     @Query(value = "SELECT x FROM Company x WHERE x.abbrevation =: abbrevation")
     Optional<Company> findByAbbreviation(@Param("abbrevation") String abbrevation);
 
-    @Query(value = "SELECT c FROM Company c WHERE c.ceo_id =: Ceo_id")
-    List<Company> findByCeoId(@Param("id") long Ceo_id);
+    @Query(value = "SELECT c FROM Company c WHERE c.ceo_id =:ceo_id")
+    List<Company> findByCeoId(@Param("ceo_id") int ceo_id);
 
 }

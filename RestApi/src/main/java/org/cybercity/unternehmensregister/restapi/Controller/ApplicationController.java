@@ -34,6 +34,7 @@ public class ApplicationController {
         User user;
         Company company;
         Job job;
+        Application application;
     }
 
     private final ApplicationService applicationService;
@@ -50,6 +51,7 @@ public class ApplicationController {
             newRes.setUser(userService.getUser(application.getApplicant_id()));
             newRes.setCompany(companyService.getByID(application.getCompany_id()));
             newRes.setJob(jobService.getJobByID(application.getJob_id()));
+            newRes.setApplication(application);
             res.add(newRes);
         }
         return res;
@@ -64,7 +66,26 @@ public class ApplicationController {
             newRes.setUser(userService.getUser(application.getApplicant_id()));
             newRes.setCompany(companyService.getByID(application.getCompany_id()));
             newRes.setJob(jobService.getJobByID(application.getJob_id()));
+            newRes.setApplication(application);
             res.add(newRes);
+        }
+        return res;
+    }
+
+    @GetMapping(path = "getApplicationsForCeoID/{id}", produces = "application/json")
+    @ResponseBody
+    public List<ResponseForm> getApplicationsForCeoID(@PathVariable long id) {
+        List<Company> companies = companyService.getByCeoId(id);
+        ArrayList<ResponseForm> res = new ArrayList<>();
+        for (Company company : companies) {
+            for (Application application : applicationService.getApplicationsForCompanyID(company.getId())) {
+                ResponseForm newRes = new ResponseForm();
+                newRes.setUser(userService.getUser(application.getApplicant_id()));
+                newRes.setCompany(companyService.getByID(application.getCompany_id()));
+                newRes.setJob(jobService.getJobByID(application.getJob_id()));
+                newRes.setApplication(application);
+                res.add(newRes);
+            }
         }
         return res;
     }

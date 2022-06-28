@@ -1,31 +1,29 @@
 import Layout from "../components/Layout";
-import JobListing from "../components/JobListing";
+import CompanyListing from "../components/CompanyListing";
 import { Component } from "react";
 import { URL } from "./api/calls";
 
-class Jobs extends Component {
+class Companies extends Component {
   static getInitialProps = async () => {
-    const query = await fetch(URL+"/api/job/getAll");
+    const query = await fetch(URL+"/api/company/getAll");
     const queryData = await query.json();
-    return { JobArray: queryData };
+    return { CompanyArray: queryData };
   };
 
   render() {
-    const { JobArray } = this.props;
+    const { CompanyArray } = this.props;
 
     return (
-      <Layout title="Jobs">
+      <Layout title="Unternehmen">
         <div className="caption v-middle text-center">
           <section className="py-4 py-xl-5">
             <div className="container h-100">
-              {JobArray.map(({ id, name, wageLower, wageUpper, employer }) => (
+              {CompanyArray.map(({ id, name, abbrevation }) => (
                 <div key={id}>
-                  <JobListing
+                  <CompanyListing
                     id={id}
                     name={name}
-                    wageLower={wageLower}
-                    wageUpper={wageUpper}
-                    employer={employer}
+                    abbrevation={abbrevation}
                   />
                 </div>
               ))}
@@ -37,4 +35,4 @@ class Jobs extends Component {
   }
 }
 
-export default Jobs;
+export default Companies;
