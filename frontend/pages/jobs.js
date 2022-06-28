@@ -7,7 +7,6 @@ class Jobs extends Component {
   static getInitialProps = async () => {
     const query = await fetch(URL+"/api/job/getAll");
     const queryData = await query.json();
-    console.log(queryData);
     return { JobArray: queryData };
   };
 

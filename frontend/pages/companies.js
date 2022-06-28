@@ -7,7 +7,6 @@ class Companies extends Component {
   static getInitialProps = async () => {
     const query = await fetch(URL+"/api/company/getAll");
     const queryData = await query.json();
-    console.log(queryData);
     return { CompanyArray: queryData };
   };
 
