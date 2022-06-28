@@ -65,7 +65,12 @@ const Nav = () => {
               </li>
               <li className="nav-item">
                 <Link href={{ pathname: "/applications", query: { id: session.user.token.content.account_id } }}>
-                  <a className="nav-link">Bewerbungen</a>
+                  <a className="nav-link">Meine Bewerbungen</a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href={{ pathname: "/applicationmanager", query: { id: session.user.token.content.account_id } }}>
+                  <a className="nav-link">Firmen Bewerbungen</a>
                 </Link>
               </li>
             </ul>
